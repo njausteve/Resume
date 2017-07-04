@@ -1,0 +1,27 @@
+{
+  "name": "njausteve",
+  "version": "1.0.0",
+  "description": "Online resume",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njausteve/Resume.git"
+  },
+  "keywords": [
+    "resume",
+    "njausteve",
+    "javascript",
+    "frontEnd",
+    "developer",
+    "jobs"
+  ],
+  "author": "njausteve (njaustevedomino@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/njausteve/Resume/issues"
+  },
+  "homepage": "https://github.com/njausteve/Resume#readme"
+}
