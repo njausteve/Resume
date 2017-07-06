@@ -23,5 +23,14 @@
   "bugs": {
     "url": "https://github.com/njausteve/Resume/issues"
   },
-  "homepage": "https://github.com/njausteve/Resume#readme"
+  "homepage": "https://github.com/njausteve/Resume#readme",
+  "dependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-sass": "^3.1.0"
+  },
+  "devDependencies": {
+    "gulp-notify": "^3.0.0"
+  }
 }
