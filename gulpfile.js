@@ -4,35 +4,102 @@
  * by Stephen njau(njaustevedomino@gmail.com)
  */
 var gulp = require('gulp'),
-    bs = require('browser-sync').create(),
+    browserSync = require('browser-sync'),
+    reload  = browserSync.reload,
     sass = require('gulp-sass'),
     gutil = require('gulp-util'),
-    notify = require("gulp-notify");
+    notify = require("gulp-notify"),
+    autoprefixer = require('gulp-autoprefixer'),
+    sassdoc = require('sassdoc'),
+    sourcemaps = require('gulp-sourcemaps');
 
-// create a default  task
-gulp.task('default', ['browser-sync', 'sass'], function() {
+
+// input values
+     var sassInput = './src/assests/sass/*.scss',
+         cssOutput = './src/assests/css';
+
+    var autoprefixerOptions = {
+    browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
+            };  
+
+    var sassdocOptions = {
+            dest: './docs/sassDocs'
+        };      
+
+
+
+
+// default task
+gulp.task('default', ['browser-sync', 'watch', 'sass']);
+
+// browser-sync task
+gulp.task('browser-sync', function(){
+       browserSync({
+            server:{
+                baseDir:'./src/'       
+            },
+             port: 8800
+        });
+});
+
+// Reload all browsers
+
+gulp.task('bs-reload', function(){
+    browserSync.reload();
+});
+
+//   sass task
+
+gulp.task('sass', function(){
+    return gulp
+         .src(sassInput)
+         .pipe(sourcemaps.init())
+         .pipe(sass())
+         .on('error', notify.onError({
+                    title: 'SASS Failed',
+                    message: `Error(s) occurred during compile! :`
+                }))
+
+         .pipe(autoprefixer(autoprefixerOptions))
+         .pipe(sourcemaps.write('./'))
+         .pipe(gulp.dest(cssOutput))
+         .pipe(reload({stream:true}))
+          .pipe(notify({
+                message: 'Styles task complete'
+            }));
 
 });
 
+// generate sassDocs
 
+gulp.task('sassdoc', function () {
+  return gulp
+    .src(sassInput)
+    .pipe(sassdoc(sassdocOptions))
+    .resume();
+});
 
-// browser-sync  task
-gulp.task('browser-sync', function() {
-    bs.init({
-        server: { baseDir: './src/' },
-        port: 8800
+// gulp watch task
+
+gulp.task('watch', function(){
+
+ gulp.watch('./src/assets/css/*.min.css', function(file) {
+        if (file.type === "changed") {
+        reload(file.path);
+        }
     });
+  gulp.watch(['./src/*.html', './src/app/**/**/*.html'], ['bs-reload']);
+  gulp.watch(['./src/app/*.js','./src/**/**/**/*.js'], ['bs-reload']);
+  gulp.watch(['./src/assets/css/*.css','./src/assets/css/**/*.css'], ['bs-reload']);
+  gulp.watch(sassInput, ['sass']);
 });
 
+// production 
 
-gulp.task('sass', function() {
-    return gulp.src('./src/assests/scsss/*.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('./src/assets/css'))
-        .pipe(bs.reload({ stream: true }));
-});
-
-gulp.task('watch', ['browser-sync'], function() {
-    gulp.watch("*.scss", ['sass']);
-    gulp.watch("*.html").on('change', bs.reload);
+gulp.task('prod', ['sassdoc'], function () {
+  return gulp
+    .src(sassdocOptions)
+    .pipe(sass({ outputStyle: 'compressed' }))
+    .pipe(autoprefixer(autoprefixerOptions))
+    .pipe(gulp.dest(cssOutput));
 });
