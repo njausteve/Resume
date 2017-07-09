@@ -1,0 +1,34 @@
+{
+  "name": "njausteve",
+  "description": "Online resume",
+  "main": "index.html",
+  "authors": [
+    "njausteve (njaustevedomino@gmail.com)"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "bower cache clean && bower install"
+  },
+  "keywords": [
+    "resume",
+    "njausteve",
+    "javascript",
+    "frontEnd",
+    "developer",
+    "jobs"
+  ],
+  "homepage": "https://github.com/njausteve/Resume",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "components-font-awesome": "^4.7.0",
+    "angular": "^1.6.5"
+  }
+}
