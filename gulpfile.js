@@ -27,8 +27,6 @@ var sassdocOptions = {
 };
 
 
-
-
 // default task
 gulp.task('default', ['browser-sync', 'watch', 'sass']);
 

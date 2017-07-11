@@ -1,3 +1,8 @@
 {
-  "directory": "./src/bower-components/"
+  "directory": "./src/bower-components/",
+   "registry": "http://bower.herokuapp.com",
+    "proxy": "http://1247499:July12%40%23friday@proxy.tcs.com:8080/",
+    "https-proxy": "https://1247499:July12%40%23friday@proxy.tcs.com:8080/",
+    "strict-ssl": false
+
   }

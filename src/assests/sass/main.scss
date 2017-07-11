@@ -1,19 +1,48 @@
-.home {
-    background-color: burlywood;
-    p{
-        color: #e2d2ec;
 
-}
-}
-a {
-  transition: transform 2s
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-    ng-cloak {
+        display: none !important;
+ }
 
+ p, h1,h2,h3,h4,h5{
+    font-family: 'Lato', sans-serif;
+ }
+
+.no-padding{
+      padding: 0px;
+}
+.head{
+    background-color: #2194f7;
+    color: white;
+    padding: 2em;
+
+    img{
+         border-radius: 50%;
+         @media screen and (max-width: 767px){
+                  max-height: 120px;
+        }
+     
+
+    }
+    p{  
+        padding:5px;
+        border-radius: 3px;
+        display:inline-block;
+        background-color: #FAF46A;
+        color: black;
+        font-style: italic;
+        line-height: 1;
+       
+      
+    }
+    .navigation{
+
+             a{
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+
+    }
+ 
 }
 
-.test{
-     background-color: red;
-      transition: transform 5s;
-     h2{
-         font: 16px;
-     } 
-}

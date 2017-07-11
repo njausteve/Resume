@@ -3,28 +3,55 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" type="text/css" href="./assests/lib/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./assests/lib/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./assests/lib/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assests/css/main.css">
 
-
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
 
     <title>njausteve</title>
 </head>
 
-<body>
-    <div class="test">
-        <pre>
-             <h1>text here</h1> 
-        </pre>
-    </div>
+<body ng-app="njausteve" ng-cloak>
 
+    <!-- header section-->
+    <header class="head text-center">
+        <div class="container-fluid no-padding">
+            <img src="/assests/images/man.svg" height="120" width="120" alt="profile pic">
+            <h1>Stephen njau</h1>
+            <p>Javascript developer</p>
+            <div class="container navigation">
+                <ul class="nav nav-justified">  
+                    <li>
+                        <a ui-sref="resume">resume</a>
+                    </li>
+                      <li>
+                        <a ui-sref="about-me">about</a>
+                    </li>
+                    <li>
+                        <a ui-sref="portifolio">portfolio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!--endof: header-->   
+    <div ui-view></div>
 </body>
 
-<script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="./assests/lib/angular.min.js"></script>
+<script type="text/javascript" src="./assests/lib/angular-ui-router.min.js"></script>
+
+
+<!--application js files -->
+<script type="text/javascript" src="./app/app.js"></script>
+<script type="text/javascript" src="./app/route.js"></script>
+<!---->
 
 </html>

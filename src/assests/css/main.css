@@ -1,21 +1,31 @@
-.home {
-  background-color: burlywood; }
-  .home p {
-    color: #e2d2ec; }
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x- ng-cloak {
+  display: none !important; }
 
-a {
-  -webkit-transition: -webkit-transform 2s;
-  transition: -webkit-transform 2s;
-  transition: transform 2s;
-  transition: transform 2s, -webkit-transform 2s; }
+p, h1, h2, h3, h4, h5 {
+  font-family: 'Lato', sans-serif; }
 
-.test {
-  background-color: red;
-  -webkit-transition: -webkit-transform 5s;
-  transition: -webkit-transform 5s;
-  transition: transform 5s;
-  transition: transform 5s, -webkit-transform 5s; }
-  .test h2 {
-    font: 16px; }
+.no-padding {
+  padding: 0px; }
+
+.head {
+  background-color: #2194f7;
+  color: white;
+  padding: 2em; }
+  .head img {
+    border-radius: 50%; }
+    @media screen and (max-width: 767px) {
+      .head img {
+        max-height: 120px; } }
+  .head p {
+    padding: 5px;
+    border-radius: 3px;
+    display: inline-block;
+    background-color: #FAF46A;
+    color: black;
+    font-style: italic;
+    line-height: 1; }
+  .head .navigation a {
+    font-size: 26px;
+    font-weight: bold; }
 
 /*# sourceMappingURL=main.css.map */
