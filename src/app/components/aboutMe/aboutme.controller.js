@@ -3,15 +3,21 @@
  *  Resume
  * by Stephen njau(njaustevedomino@gmail.com)
  */
-(function() {
+(function () {
   'use strict';
 
   angular
-  .module('njausteve')
-  .controller('aboutMeController', aboutMeController);
+    .module('njausteve')
+    .controller('aboutMeController', aboutMeController);
 
   /** @ngInject */
   function aboutMeController() {
-}
+
+
+
+
+
+
+  }
 
 })();
