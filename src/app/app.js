@@ -3,10 +3,10 @@
  *  Resume
  * by Stephen njau(njaustevedomino@gmail.com)
  */
-(function() {
+(function () {
     'use strict';
 
     angular
-        .module('njausteve', ['ui.router']);
+        .module('njausteve', ['ui.router', 'ngAnimate']);
 
 })();

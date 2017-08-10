@@ -57,11 +57,22 @@ h5 {
   line-height: 44.8px;
   font-weight: 300;
   margin: 32px 0;
-  text-align: center;
   color: #334455; }
-
-#about-me .intro .rotate-words {
-  font-weight: 800; }
+  #about-me .intro h2 .rotateWord {
+    display: inline-block;
+    text-align: left;
+    text-indent: 4px;
+    min-height: 34px; }
+    #about-me .intro h2 .rotateWord span {
+      position: absolute;
+      font-weight: 800;
+      letter-spacing: -1px; }
+  #about-me .intro h2 .swap-animation.ng-leave {
+    -webkit-animation: rotateOutWord .5s linear forwards;
+            animation: rotateOutWord .5s linear forwards; }
+  #about-me .intro h2 .swap-animation.ng-enter {
+    -webkit-animation: rotateInWord .5s linear forwards;
+            animation: rotateInWord .5s linear forwards; }
 
 #about-me .section-title {
   position: relative;
@@ -185,5 +196,45 @@ h5 {
 
 .work-process h4 {
   margin-bottom: 32px; }
+
+@-webkit-keyframes rotateOutWord {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px); } }
+
+@keyframes rotateOutWord {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px); } }
+
+@-webkit-keyframes rotateInWord {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); } }
+
+@keyframes rotateInWord {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); } }
 
 /*# sourceMappingURL=main.css.map */

@@ -31,7 +31,7 @@ var sassdocOptions = {
 gulp.task('default', ['browser-sync', 'watch', 'sass']);
 
 // browser-sync task
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', function () {
     browserSync({
         server: {
             baseDir: './src/'
@@ -42,13 +42,13 @@ gulp.task('browser-sync', function() {
 
 // Reload all browsers
 
-gulp.task('bs-reload', function() {
+gulp.task('bs-reload', function () {
     browserSync.reload();
 });
 
 //   sass task
 
-gulp.task('sass', function() {
+gulp.task('sass', function () {
     return gulp
         .src(sassInput)
         .pipe(sourcemaps.init())
@@ -58,10 +58,12 @@ gulp.task('sass', function() {
             message: `Error(s) occurred during compile! :`
         }))
 
-    .pipe(autoprefixer(autoprefixerOptions))
+        .pipe(autoprefixer(autoprefixerOptions))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(cssOutput))
-        .pipe(reload({ stream: true }))
+        .pipe(reload({
+            stream: true
+        }))
         .pipe(notify({
             message: 'Styles task complete'
         }));
@@ -70,7 +72,7 @@ gulp.task('sass', function() {
 
 // generate sassDocs
 
-gulp.task('sassdoc', function() {
+gulp.task('sassdoc', function () {
     return gulp
         .src(sassInput)
         .pipe(sassdoc(sassdocOptions))
@@ -79,9 +81,9 @@ gulp.task('sassdoc', function() {
 
 // gulp watch task
 
-gulp.task('watch', function() {
+gulp.task('watch', function () {
 
-    gulp.watch('./src/assets/css/*.min.css', function(file) {
+    gulp.watch('./src/assets/css/*.min.css', function (file) {
         if (file.type === "changed") {
             reload(file.path);
         }
@@ -97,11 +99,12 @@ gulp.task('watch', function() {
 // copy npm components to lib folder
 
 
-gulp.task('copy:bower', function() {
+gulp.task('copy:bower', function () {
     gulp.src(['./src/bower-components/bootstrap/dist/jquery.min.js',
             './src/bower-components/bootstrap/dist/css/bootstrap.min.css',
             './src/bower-components/components-font-awesome/css/font-awesome.min.css',
-            './src/bower-components/angular/angular.min.js'
+            './src/bower-components/angular/angular.min.js',
+            './src/bower-components/angular-animate/angular-animate.min.js'
         ])
         .pipe(gulp.dest('./src/assests/lib/'));
 });
@@ -112,10 +115,12 @@ gulp.task('copy:bower', function() {
 
 // production 
 
-gulp.task('prod', ['sassdoc'], function() {
+gulp.task('prod', ['sassdoc'], function () {
     return gulp
         .src(sassdocOptions)
-        .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }))
         .pipe(autoprefixer(autoprefixerOptions))
         .pipe(gulp.dest(cssOutput));
 });

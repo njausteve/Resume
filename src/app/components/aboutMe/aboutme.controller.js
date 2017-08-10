@@ -15,17 +15,24 @@
 
     var vm = this;
 
-    var myInterests = ["human behaviour", "body language", 'personal development', 'Technology', 'Data Science', 'Disruptive technologies'];
 
-    vm.interest = $interval(function () {
+    var myInterests = ["human behaviour", "body language", 'personal development', 'Technology', 'Data Science', 'Disruptive Technology'];
+    vm.interest = myInterests[5];
 
-      vm.interest = myInterests[Math.floor(Math.random() * myInterests.length)];
-
-
-    }, 3000);
+    randomizeInterest();
 
 
+    // randomizing the Interest Array
+
+    function randomizeInterest() {
+
+      $interval(function () {
+
+        vm.interest = myInterests[Math.floor(Math.random() * myInterests.length)];
+
+      }, 4500);
+
+    }
   }
-
 
 })();
