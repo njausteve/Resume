@@ -89,7 +89,7 @@ gulp.task('watch', function () {
         }
     });
     gulp.watch(['./src/*.html', './src/app/**/**/*.html'], ['bs-reload']);
-    gulp.watch(['./src/app/*.js', './src/**/**/**/*.js'], ['bs-reload']);
+    gulp.watch(['./src/app/*.js', '.`/src/app/**/**/*.js'], ['bs-reload']);
     gulp.watch(['./src/assets/css/*.css', './src/assets/css/**/*.css'], ['bs-reload']);
     gulp.watch(sassInput, ['sass']);
 });

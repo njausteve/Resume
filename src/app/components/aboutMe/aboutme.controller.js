@@ -13,7 +13,10 @@
   /** @ngInject */
   function aboutMeController($interval) {
 
+
+
     var vm = this;
+
 
 
     var myInterests = ["human behaviour", "body language", 'personal development', 'Technology', 'Data Science', 'Disruptive Technology'];

@@ -1,0 +1,39 @@
+<section id="my-works">
+    <div class="content container">
+        <div class="row">
+            <!--my works section-->
+            <div class="col-lg-12">
+                <h2 class="section-title center">
+                    <span>
+                         <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                           My works
+                     </span>
+                </h2>
+                <div class="text-center my-Works-nav">
+                    <button class="btn  myWorks">All</button>
+                    <button class="btn  myWorks">Coding</button>
+                    <button class="btn myWorks">Design</button>
+                    <button class="btn myWorks">Logo</button>
+                </div>
+            </div>
+            <!--endof: my works section-->
+
+        </div>
+
+        <div class="row " style=" margin: auto 15px; position:relative;">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 center " ng-repeat="project in portif.myProjects">
+                <div class="work">
+                    <img src="{{project.img_url}} " alt="{{project.title}} " width="300 " height="300 ">
+                    <div class="work-desc ">
+                        <h3 class="title ">
+                            {{project.title}}
+                        </h3>
+                        <p>{{project.type}}</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

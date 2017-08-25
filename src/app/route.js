@@ -13,40 +13,43 @@
         /** @ngInject */
         function routerConfig($stateProvider, $urlRouterProvider) {
                 $stateProvider
-                        .state('about-me', {
+
+                        .state('resume', {
+
+                                url: '/resume',
+                                templateUrl: '/app/components/resume/resume.html',
+                                controller: 'resumeController',
+                                controllerAs: 'resume'
+                        })
+
+                        .state('portifolio', {
+
+                                url: '/portifolio',
+                                templateUrl: '/app/components/portfolio/portfolio.html',
+                                controller: 'portifolioController',
+                                controllerAs: 'portif'
+                        })
+                        .state('about me', {
                                 url: '/about',
                                 templateUrl: '/app/components/aboutMe/about.html',
                                 controller: 'aboutMeController',
                                 controllerAs: 'about'
                         })
-                        .state('portifolio', {
 
-                                url: '/portifolio',
-                                templateUrl: '',
-                                controller: '',
-                                controllerAs: ''
+                        .state('blog', {
+
+                                url: '/blog',
+                                templateUrl: '/app/components/blog/blog.html',
+                                controller: 'blogController',
+                                controllerAs: 'blog'
                         })
                         .state('contact', {
 
                                 url: '/contact',
-                                templateUrl: '',
-                                controller: '',
-                                controllerAs: ''
-                        })
-                        .state('blog', {
-
-                                url: '/blog',
-                                templateUrl: '',
-                                controller: '',
-                                controllerAs: ''
-                        })
-                        .state('resume', {
-
-                                url: '/resume',
-                                // templateUrl : '',
-                                // controller: '',
-                                // controllerAs: ''
-                        })
+                                templateUrl: '/app/components/contact/contact.html',
+                                controller: 'contactController',
+                                controllerAs: 'contact'
+                        });
 
 
                 $urlRouterProvider.otherwise('/about');
