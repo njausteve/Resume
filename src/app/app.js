@@ -7,6 +7,6 @@
     'use strict';
 
     angular
-        .module('njausteve', ['ui.router', 'ngAnimate']);
+        .module('njausteve', ['ui.router', 'angular-loading-bar', 'ngAnimate']);
 
 })();

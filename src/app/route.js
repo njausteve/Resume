@@ -23,12 +23,12 @@
                         })
 
                         .state('portifolio', {
-
                                 url: '/portifolio',
                                 templateUrl: '/app/components/portfolio/portfolio.html',
                                 controller: 'portifolioController',
                                 controllerAs: 'portif'
                         })
+
                         .state('about me', {
                                 url: '/about',
                                 templateUrl: '/app/components/aboutMe/about.html',

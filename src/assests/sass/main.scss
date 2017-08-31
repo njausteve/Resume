@@ -277,14 +277,17 @@ h5 {
         button {
             background: transparent;
             padding: 7px 12px;
-            margin: auto 10px;
             border: 1px solid #DDE4E6;
             border-radius: 4px;
             color: #b8c7ca;
+            @media screen and (min-width: 767px) {
+                margin: auto 10px;
+            }
             .myWorks {
                 font-family: 'Lato', sans-serif;
                 font-size: 11px;
                 letter-spacing: .1em;
+                margin-top: 30px;
             }
             &:hover {
                 color: #345;
@@ -296,14 +299,24 @@ h5 {
                 color: #fff;
             }
         }
+        .active-btn {
+            background-color: #345 !important;
+            color: #fff !important;
+            border-color: transparent !important;
+        }
     }
     .work {
         border: 1px solid #EAEDEF;
         border-radius: 0 0 4px 4px;
         margin-bottom: 30px;
-        img {
-            width: 100%;
-            height: auto;
+        .mask {
+            img {
+                width: 100%;
+                height: auto;
+                &:hover {
+                    opacity: .5;
+                }
+            }
         }
         .work-desc {
             .title {

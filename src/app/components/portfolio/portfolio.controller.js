@@ -15,6 +15,19 @@
 
         var vm = this;
 
+        vm.category = {
+            category: ''
+        };
+
+        vm.myCategory = _mycategory;
+
+        function _mycategory(Selectedcategory) {
+
+            return vm.category = {
+                category: Selectedcategory
+            };
+        }
+
         console.log("portifolioController loaded");
 
         vm.myProjects = [{
@@ -24,6 +37,7 @@
                 Project_url: 'https://github.com/njausteve/Resume',
                 type: 'an illustration work',
                 desc: '',
+                category: 'coding',
                 client: 'njausteve, self',
                 tech: 'Angular js , gulp, html5 , css3 , Sass'
             },
@@ -34,6 +48,7 @@
                 Project_url: '',
                 type: 'hybrid mobile application',
                 desc: '',
+                category: 'coding',
                 client: '',
                 tech: ''
             },
@@ -44,6 +59,7 @@
                 Project_url: '',
                 type: 'Consequatur quisquam',
                 desc: '',
+                category: 'logo',
                 client: '',
                 tech: ''
             },
@@ -54,6 +70,7 @@
                 Project_url: '',
                 type: 'reprehenderit quas',
                 client: '',
+                category: 'design',
                 desc: '',
                 tech: ''
             },
@@ -64,36 +81,40 @@
                 Project_url: '',
                 type: 'consectetur adipisicing',
                 desc: '',
+                category: 'coding',
                 client: '',
                 tech: ''
             },
             {
                 title: 'veritatis porro',
                 id: 6,
-                img_url: 'https://unsplash.it/400/300?image=76',
+                img_url: 'https://unsplash.it/400/300?image=39',
                 Project_url: '',
                 desc: '',
+                category: 'logo',
                 type: 'odio magni quibusdam',
                 client: '',
                 tech: ''
             },
             {
                 title: 'magni nam dolores ipsam',
-                id: 3,
+                id: 7,
                 img_url: 'https://unsplash.it/400/300?image=47',
                 Project_url: '',
                 type: 'Consequatur quisquam',
                 desc: '',
+                category: 'design',
                 client: '',
                 tech: ''
             },
             {
                 title: 'Lorem ipsum dolor, ',
-                id: 4,
+                id: 8,
                 img_url: 'https://unsplash.it/400/300?image=35',
                 Project_url: '',
                 type: 'reprehenderit quas',
                 client: '',
+                category: 'logo',
                 desc: '',
                 tech: ''
             }

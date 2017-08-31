@@ -10,20 +10,23 @@
                      </span>
                 </h2>
                 <div class="text-center my-Works-nav">
-                    <button class="btn  myWorks">All</button>
-                    <button class="btn  myWorks">Coding</button>
-                    <button class="btn myWorks">Design</button>
-                    <button class="btn myWorks">Logo</button>
+                    <button class="btn myWorks" ng-click="portif.myCategory('')" ng-class="{'active-btn' : portif.category.category == '' }">All</button>
+                    <button class="btn myWorks " ng-click="portif.myCategory('coding')" ng-class="{'active-btn' : portif.category.category == 'coding' }">Coding</button>
+                    <button class="btn myWorks " ng-click="portif.myCategory('design')" ng-class="{'active-btn' : portif.category.category == 'design' }">Design</button>
+                    <button class="btn myWorks " ng-click="portif.myCategory('logo')" ng-class="{'active-btn' : portif.category.category == 'logo' }">Logo</button>
                 </div>
             </div>
-            <!--endof: my works section-->
-
+            <!--endof: my works <section-->
+            </section-->
         </div>
 
-        <div class="row " style=" margin: auto 15px; position:relative;">
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 center " ng-repeat="project in portif.myProjects">
-                <div class="work">
-                    <img src="{{project.img_url}} " alt="{{project.title}} " width="300 " height="300 ">
+        <div class="row " style=" margin: auto 15px; position:relative; " ng-cloak>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 center " ng-repeat="project in portif.myProjects | filter
+                        : portif.category ">
+                <div class="work ">
+                    <div class="mask">
+                        <img src="{{project.img_url}} " alt="{{project.title}} " width="300 " height="300 ">
+                    </div>
                     <div class="work-desc ">
                         <h3 class="title ">
                             {{project.title}}

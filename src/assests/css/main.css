@@ -234,14 +234,17 @@ h5 {
   #my-works .my-Works-nav button {
     background: transparent;
     padding: 7px 12px;
-    margin: auto 10px;
     border: 1px solid #DDE4E6;
     border-radius: 4px;
     color: #b8c7ca; }
+    @media screen and (min-width: 767px) {
+      #my-works .my-Works-nav button {
+        margin: auto 10px; } }
     #my-works .my-Works-nav button .myWorks {
       font-family: 'Lato', sans-serif;
       font-size: 11px;
-      letter-spacing: .1em; }
+      letter-spacing: .1em;
+      margin-top: 30px; }
     #my-works .my-Works-nav button:hover {
       color: #345;
       border: 1px solid #345;
@@ -250,14 +253,20 @@ h5 {
     #my-works .my-Works-nav button:active {
       background-color: #345;
       color: #fff; }
+  #my-works .my-Works-nav .active-btn {
+    background-color: #345 !important;
+    color: #fff !important;
+    border-color: transparent !important; }
 
 #my-works .work {
   border: 1px solid #EAEDEF;
   border-radius: 0 0 4px 4px;
   margin-bottom: 30px; }
-  #my-works .work img {
+  #my-works .work .mask img {
     width: 100%;
     height: auto; }
+    #my-works .work .mask img:hover {
+      opacity: .5; }
   #my-works .work .work-desc .title {
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
