@@ -3,61 +3,30 @@
         <div class="content">
             <div class="row">
                 <div class=" col-md-6">
+                    <!-- work section -->
                     <div class="timeline">
                         <h2><i class="fa fa-flask" aria-hidden="true"></i>WORK HISTORY</h2>
-                        <div class="event current"><span class="date">2012</span>
+                        <div class="event current" ng-repeat="job in resume.work"><span class="date">{{job.year}}</span>
                             <p></p>
-                            <h4>Front End Web Developer</h4>
-                            <h5>PIXELWARS INC.</h5>
-                            <p>I currently work for Pixelwars creative studio. I create usable web interfaces, front end coding
-                                stuff and almost anything. But i love what i do.
-                            </p>
-                        </div>
-                        <div class="event "><span class="date">2010</span>
-                            <p></p>
-                            <h4>Web Developer</h4>
-                            <h5>GOOGLE INC.</h5>
-                            <p>I worked as a Web Developer at Google for 3 years. I create usable web interfaces, front end
-                                coding stuff and almost anything. But i love what i do.
-                            </p>
-                        </div>
-                        <div class="event "><span class="date">2006</span>
-                            <p></p>
-                            <h4>Exclusive Author</h4>
-                            <h5>ENVATO INC.</h5>
-                            <p>I am an Elite Author at Envato. I create usable web interfaces, front end coding stuff and almost
-                                anything. But i love what i do.
-                            </p>
+                            <h4>{{job.title}}</h4>
+                            <h5>{{job.company}}</h5>
+                            <p>{{job.desc}}</p>
+                            <h6>{{job.location}}</h6>
                         </div>
                     </div>
+                    <!-- endof: work section -->
+                    <!-- education section -->
                     <div class="timeline">
                         <h2><i class="fa fa-graduation-cap " aria-hidden="true"></i>EDUCATION HISTORY</h2>
-                        <div class="event "><span class="date">2012</span>
+                        <div class="event " ng-repeat="edu in resume.education"><span class="date">{{edu.year}}</span>
                             <p></p>
-                            <h4>Atom Science</h4>
-                            <h5>STANFORD UNIVERSITY</h5>
-                            <p>I studied atomic stuff at Stanford University. I create usable web interfaces, front end coding
-                                stuff and almost anything. But i love what i do.
-                            </p>
-                        </div>
-                        <div class="event "><span class="date">2010</span>
-                            <p></p>
-                            <h4>Software Engineering</h4>
-                            <h5>HARVARD UNIVERSITY</h5>
-                            <p>I got my Master Degree at Harvard University. I create usable web interfaces, front end coding
-                                stuff and almost anything. But i love what i do.
-                            </p>
-                        </div>
-                        <div class="event "><span class="date">2006</span>
-                            <p></p>
-                            <h4>Computer Science</h4>
-                            <h5>MIT</h5>
-                            <p>I studied Computer Science at MIT. I create usable web interfaces, front end coding stuff and
-                                almost anything. But i love what i do.
-                            </p>
+                            <h4>{{edu.course}}</h4>
+                            <h5>{{edu.institution}}</h5>
+                            <p>{{edu.desc}}</p>
                         </div>
                     </div>
                 </div>
+                <!-- end of: education section -->
                 <div class=" col-md-6">
                     <h2 class="section-title"><span><i class="fa fa-cog" aria-hidden="true"></i>DEVELOPMENT SKILLS</span></h2>
                     <div class="skillset">

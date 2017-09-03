@@ -452,6 +452,14 @@ h5 {
         @media screen and (max-width: 767px) {
           #resume .content .timeline .event h5 {
             text-align: center; } }
+      #resume .content .timeline .event h6 {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 26.56px;
+        color: #475665; }
+        @media screen and (max-width: 767px) {
+          #resume .content .timeline .event h6 {
+            text-align: center; } }
       #resume .content .timeline .event:last-child p::before {
         height: 76%; }
 
