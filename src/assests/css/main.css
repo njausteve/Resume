@@ -7,6 +7,7 @@
   display: none !important; }
 
 p,
+body,
 h1,
 h2,
 h3,
@@ -281,6 +282,288 @@ h5 {
     letter-spacing: .04em;
     line-height: 21.58px;
     color: #a7b6b9; }
+
+#resume .content {
+  padding-top: 2em;
+  position: relative;
+  margin: auto;
+  width: 100%;
+  text-align: left; }
+  @media screen and (max-width: 767px) {
+    #resume .content {
+      padding-top: 1em; } }
+  @media screen and (max-width: 767px) {
+    #resume .content {
+      padding: 1em 2em; } }
+  #resume .content .section-title span {
+    font-size: 12px;
+    line-height: 19.92px;
+    letter-spacing: 1px; }
+  #resume .content .timeline {
+    position: relative;
+    padding-left: 112px;
+    padding-bottom: 8px; }
+    @media screen and (max-width: 767px) {
+      #resume .content .timeline {
+        padding-left: 0; } }
+    #resume .content .timeline h2 {
+      position: relative;
+      margin-bottom: 2em;
+      font-weight: 300;
+      font-size: 19px;
+      letter-spacing: 1px;
+      color: #334455;
+      line-height: 31.54px;
+      text-align: left; }
+      #resume .content .timeline h2 .fa {
+        display: block;
+        position: absolute;
+        font-size: 28px;
+        top: -27px;
+        left: -112px;
+        background: #fff;
+        border-radius: 50%;
+        border: 4px solid #f4f6f7;
+        width: 86px;
+        line-height: 78px;
+        margin: 0;
+        z-index: 120;
+        text-align: center;
+        color: #b7c6c9; }
+        @media screen and (max-width: 767px) {
+          #resume .content .timeline h2 .fa {
+            position: relative;
+            top: auto;
+            left: auto;
+            margin: -12px auto 6px auto;
+            border: 0;
+            line-height: 1; } }
+        #resume .content .timeline h2 .fa:before {
+          margin: 0;
+          display: inline;
+          margin-left: 0;
+          margin-right: 0; }
+      @media screen and (max-width: 767px) {
+        #resume .content .timeline h2 {
+          text-align: center; } }
+    #resume .content .timeline .event {
+      position: relative;
+      padding: 1em 2em;
+      margin-bottom: 3em;
+      background: #fff;
+      border: 3px solid #edf1f3;
+      border-radius: 6px; }
+      @media screen and (max-width: 767px) {
+        #resume .content .timeline .event {
+          padding: 16px;
+          margin-top: 104px; }
+          #resume .content .timeline .event:first-of-type {
+            margin-top: 116px; }
+          #resume .content .timeline .event::before {
+            border-width: 0px !important; }
+          #resume .content .timeline .event::after {
+            border-width: 0px !important; } }
+      #resume .content .timeline .event::before {
+        position: absolute;
+        right: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: "";
+        height: 0px;
+        width: 0px;
+        pointer-events: none;
+        border-right-color: #edf1f3;
+        border-width: 15px;
+        margin-top: -15px; }
+      #resume .content .timeline .event::after {
+        position: absolute;
+        right: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: "";
+        height: 0px;
+        width: 0px;
+        pointer-events: none;
+        border-right-color: #fff;
+        border-width: 10px;
+        margin-top: -10px; }
+      #resume .content .timeline .event .date {
+        font-family: 'Oswald', sans-serif;
+        position: absolute;
+        top: 45%;
+        margin-top: -24px;
+        left: -106px;
+        width: 68px;
+        line-height: 58px;
+        text-align: center;
+        background: #F3BE27;
+        display: block;
+        z-index: 120;
+        color: #fff;
+        border-radius: 50%;
+        border: 5px solid #FFF;
+        font-family: Oswald;
+        font-weight: 400;
+        font-size: 11px;
+        letter-spacing: 1px; }
+        @media screen and (max-width: 767px) {
+          #resume .content .timeline .event .date {
+            top: -64px;
+            left: 50%;
+            margin-left: -32px; } }
+      #resume .content .timeline .event p {
+        margin: .6em 0 .2em 0;
+        font-size: 14px;
+        letter-spacing: 0.28px;
+        line-height: 23.24px;
+        color: #334455; }
+        #resume .content .timeline .event p:before {
+          display: block;
+          content: "";
+          position: absolute;
+          top: -30px;
+          left: -72px;
+          height: 160%;
+          width: 4px;
+          background: #F4F6F7; }
+          @media screen and (max-width: 767px) {
+            #resume .content .timeline .event p:before {
+              left: 50%;
+              z-index: -1; } }
+      #resume .content .timeline .event h4 {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 26.56px;
+        color: #334455;
+        margin-bottom: 3px; }
+        @media screen and (max-width: 767px) {
+          #resume .content .timeline .event h4 {
+            text-align: center; } }
+      #resume .content .timeline .event h5 {
+        margin: 0;
+        padding: 0 0 .3em 0;
+        font-size: 12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #c9d5d6; }
+        @media screen and (max-width: 767px) {
+          #resume .content .timeline .event h5 {
+            text-align: center; } }
+      #resume .content .timeline .event:last-child p::before {
+        height: 76%; }
+
+#resume .skillset {
+  padding: 0 0 3.2em 0; }
+  #resume .skillset .skill-unit {
+    padding-bottom: 0; }
+    #resume .skillset .skill-unit h4 {
+      font-weight: 800;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: #fff;
+      position: relative;
+      z-index: 100;
+      padding-left: 14px;
+      text-transform: uppercase;
+      margin: 2em 0 .6em 0;
+      margin-bottom: -26px; }
+    #resume .skillset .skill-unit .bar {
+      position: relative;
+      width: 100%;
+      height: 36px; }
+      #resume .skillset .skill-unit .bar .progress {
+        background: #0085CC;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        border-radius: 4px;
+        -webkit-box-shadow: 4px 4px 0 #e7e7e7;
+                box-shadow: 4px 4px 0 #e7e7e7;
+        font-size: 16px;
+        line-height: 26.56px; }
+
+#resume .testo-group {
+  padding: 1em 0 2em 0; }
+  #resume .testo-group .testo {
+    position: relative;
+    padding: 1.4em 2.2em;
+    margin: 0 16px 40px 0;
+    background: #eff4f5;
+    border-radius: 6px; }
+    #resume .testo-group .testo::before {
+      display: block;
+      content: "\f10d";
+      line-height: 1;
+      font-size: 14px;
+      padding: 4px 6px;
+      position: absolute;
+      left: 10px;
+      top: 12px;
+      color: #fff; }
+    #resume .testo-group .testo img {
+      display: block;
+      float: right;
+      max-width: 100px;
+      border-radius: 50%;
+      margin: -40px -60px 10px 20px;
+      border: 8px solid #fff;
+      height: auto; }
+    #resume .testo-group .testo p {
+      position: relative;
+      margin: .6em 0 0.2em 0;
+      font-size: 14px;
+      line-height: 150%;
+      color: #6a7686; }
+    #resume .testo-group .testo h4 {
+      position: relative;
+      margin: 0;
+      font-weight: 700;
+      color: #6A7686;
+      font-size: 16px; }
+      #resume .testo-group .testo h4 span {
+        display: inline-block;
+        font-size: 11px;
+        letter-spacing: .04em;
+        font-weight: 700;
+        margin-left: 1em;
+        color: #bfc5cd;
+        text-transform: uppercase; }
+
+#resume p {
+  margin: 1.2em 0; }
+  #resume p .button {
+    display: inline-block;
+    position: relative;
+    padding: 1.3em 2.6em;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.2;
+    border: 0;
+    outline: 0;
+    background: #fff;
+    border: 2px solid #6A7686;
+    color: #6A7686;
+    text-shadow: none;
+    border-radius: 4px;
+    text-decoration: none; }
+    #resume p .button:hover {
+      background: #0085CC;
+      color: #fff;
+      border-color: #0085cc; }
+    @media screen and (max-width: 767px) {
+      #resume p .button {
+        display: block;
+        text-align: center;
+        background: #0085CC !important;
+        color: #fff !important;
+        border-color: #0085cc; } }
 
 @-webkit-keyframes rotateOutWord {
   0% {
