@@ -4,7 +4,8 @@
             i {
                 background: $color;
             }
-        } // styling begins Here
+        } // fonts
+        @import url('https://fonts.googleapis.com/css?family=Tangerine'); // styling begins Here
         [ng\:cloak],
         [ng-cloak],
         [data-ng-cloak],
@@ -662,6 +663,314 @@
                         background: #0085CC !important;
                         color: #fff !important;
                         border-color: #0085cc;
+                    }
+                }
+            }
+        } //contact page
+        #contact {
+            margin: auto;
+            .content {
+                .section-title {
+                    span {
+                        font-size: 12px;
+                        line-height: 19.92px;
+                        letter-spacing: 1px;
+                    }
+                }
+                .me {
+                    padding: 1em 0 3em 0;
+                    overflow: auto;
+                    .letter-title {
+                        margin: 0 0 .6em 0;
+                        font-size: 48px;
+                        font-weight: 400;
+                        line-height: 57.6px;
+                        font-family: 'Tangerine', serif;
+                        color: #d0dadc;
+                        @media screen and (max-width: 767px) {
+                            text-align: center;
+                            font-size: 2.2em;
+                        }
+                    }
+                    .stamp {
+                        position: relative;
+                        float: left;
+                        margin-right: 1.6em;
+                        width: 114px;
+                        height: 134px;
+                        background: url('/assests/images/stamp.png') 0 0 no-repeat;
+                        @media screen and (max-width: 767px) {
+                            float: none;
+                            margin: 0 auto 16px auto;
+                        }
+                        img {
+                            display: block;
+                            width: 94px;
+                            height: 114px;
+                            position: absolute;
+                            top: 10px;
+                            left: 10px;
+                        }
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: url('/assests/images/stamp-mask.png') 0 0 no-repeat;
+                        }
+                    }
+                    .letter-info {
+                        margin-left: 130px;
+                        @media screen and (max-width: 767px) {
+                            margin-left: 0;
+                        }
+                        p {
+                            margin: 0;
+                            font-size: 14px;
+                            text-align: left;
+                            line-height: 23.24px;
+                            color: #334455;
+                            i {
+                                background-color: #0160A8;
+                                display: inline-block;
+                                padding: 8px 10px;
+                                font-size: 15px;
+                                border-radius: 50%;
+                                color: #fff;
+                                margin: 0 14px 10px 0;
+                            }
+                        }
+                    }
+                }
+                .contact-form {
+                    margin: 1.6em 0 3em 0;
+                    overflow: auto;
+                    p {
+                        margin: 0 0 1.8em 0;
+                        width: 50%;
+                        float: left;
+                        position: relative;
+                        @media screen and (max-width: 767px) {
+                            width: 100%;
+                            padding-right: 0 !important;
+                        }
+                        &:nth-of-type(1) {
+                            padding-right: 32px;
+                        }
+                        &:nth-of-type(3) {
+                            width: 100%;
+                        }
+                        &:nth-of-type(4) {
+                            width: 100%
+                        }
+                        input:not([type=submit]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]) {
+                            width: 100%;
+                            display: block;
+                            -moz-box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                            -ms-box-sizing: border-box;
+                            box-sizing: border-box;
+                        }
+                        input:not([type=submit]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]),
+                        textarea,
+                        select {
+                            padding: .8em;
+                            width: 262px;
+                            max-width: 100%;
+                            font-size: 1em;
+                            color: #6A7686;
+                            border: 2px solid #e9eeee;
+                            border-radius: 4px;
+                            background: #fff;
+                            -webkit-appearance: none;
+                            -webkit-tap-highlight-color: transparent;
+                            -moz-box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                            -ms-box-sizing: border-box;
+                            box-sizing: border-box;
+                            width: 100%;
+                        }
+                        input[type=submit],
+                        input[type=button],
+                        button,
+                        a.button {
+                            display: inline-block;
+                            position: relative;
+                            padding: 1.3em 2.6em;
+                            font-size: 11px;
+                            letter-spacing: 1px;
+                            font-weight: 800;
+                            text-transform: uppercase;
+                            line-height: 1.2;
+                            border: 0;
+                            outline: 0;
+                            background: #fff;
+                            border: 2px solid #6A7686;
+                            color: #6A7686;
+                            text-shadow: none;
+                            border-radius: 4px;
+                            &:hover {
+                                background: #0085CC;
+                                color: #fff;
+                                border-color: #0085cc;
+                            }
+                        }
+                        textarea {
+                            width: 100%;
+                            display: block;
+                            -moz-box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                            -ms-box-sizing: border-box;
+                            box-sizing: border-box;
+                        }
+                        textarea {
+                            height: 100px
+                        }
+                        label {
+                            display: block;
+                            font-size: 10px;
+                            margin-bottom: .2em;
+                            letter-spacing: 1px;
+                            color: #6a7666;
+                            text-transform: uppercase;
+                        }
+                    }
+                    &::-webkit-input-placeholder {
+                        color: rgba(106, 118, 134, 0.4);
+                    }
+                }
+                .links {
+                    .social {
+                        padding: 0;
+                        margin: 2em 0 6em 0;
+                        list-style: none;
+                        li {
+                            display: inline-block;
+                            padding: 0;
+                            margin-bottom: -3px;
+                            a {
+                                display: block;
+                                float: left;
+                                margin: 0 .4em .3em 0;
+                                text-align: center;
+                                font-size: 20px;
+                                width: 42px;
+                                line-height: 40px;
+                                color: #516075;
+                                border-radius: 4px;
+                                border: 1px solid #dde4e6;
+                                text-decoration: none;
+                            }
+                            .fa-facebook {
+                                &:hover {
+                                    color: #fff;
+                                    background: #4267B2;
+                                }
+                            }
+                            .fa-twitter {
+                                &:hover {
+                                    color: #fff;
+                                    background: #28A9E0;
+                                }
+                            }
+                            .fa-linkedin {
+                                &:hover {
+                                    color: #fff;
+                                    background: #0B79B8;
+                                }
+                            }
+                            .fa-google-plus {
+                                &:hover {
+                                    color: #fff;
+                                    background: #D74538;
+                                }
+                            }
+                            .fa-pinterest {
+                                &:hover {
+                                    color: #fff;
+                                    background: #BF0620;
+                                }
+                            }
+                            .fa-github {
+                                &:hover {
+                                    color: #fff;
+                                    background: #000;
+                                }
+                            }
+                            .fa-dribbble {
+                                &:hover {
+                                    color: #fff;
+                                    background: #E84C88;
+                                }
+                            }
+                            .fa-instagram {
+                                &:hover {
+                                    color: #fff;
+                                    background: #FE7C40;
+                                }
+                            }
+                            .fa-skype {
+                                &:hover {
+                                    color: #fff;
+                                    background: #0078CA;
+                                }
+                            }
+                            .fa-youtube {
+                                &:hover {
+                                    color: #fff;
+                                    background: #ED0E11;
+                                }
+                            }
+                            .fa-stack-overflow {
+                                &:hover {
+                                    color: #fff;
+                                    background: #F48024;
+                                }
+                            }
+                            .fa-foursquare {
+                                &:hover {
+                                    color: #fff;
+                                    background: #F94877;
+                                }
+                            }
+                        }
+                    }
+                }
+                .map {
+                    margin: 1.6em 0 3em 0;
+                    line-height: 0;
+                    padding: 8px;
+                    border: 1px solid #e9eeee;
+                    .map-canvas {
+                        height: 342px;
+                        margin: 0px;
+                        padding: 0px;
+                        line-height: 1.6;
+                        position: relative;
+                        overflow: hidden;
+                        .inner-map {
+                            height: 100%;
+                            width: 100%;
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            background-color: #e5e3df;
+                            .inner-most {
+                                position: absolute;
+                                z-index: 0;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                width: 100%;
+                                padding: 0px;
+                                border-width: 0px;
+                                margin: 0px;
+                                font: 400 11px Roboto, Arial, sans-serif;
+                                text-decoration: none;
+                            }
+                        }
                     }
                 }
             }

@@ -11,12 +11,15 @@
         .controller('contactController', contactController);
 
     /** @ngInject */
-    function contactController() {
+    function contactController(NgMap) {
 
         var vm = this;
 
         console.log("contactController loaded");
 
+        NgMap.getMap().then(function (map) {
+
+        });
 
     }
 

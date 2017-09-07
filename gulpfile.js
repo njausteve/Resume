@@ -105,7 +105,8 @@ gulp.task('copy:bower', function () {
             './src/bower-components/components-font-awesome/css/font-awesome.min.css',
             './src/bower-components/angular/angular.min.js',
             './src/bower-components/angular-loading-bar/build/loading-bar.min.js',
-            './src/bower-components/angular-animate/angular-animate.min.js'
+            './src/bower-components/angular-animate/angular-animate.min.js',
+            './src/bower-components/ngmap/build/scripts/ng-map.min.js'
 
         ])
         .pipe(gulp.dest('./src/assests/lib/'));
