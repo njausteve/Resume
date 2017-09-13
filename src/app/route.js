@@ -35,7 +35,6 @@
                                 controller: 'aboutMeController',
                                 controllerAs: 'about'
                         })
-
                         .state('blog', {
 
                                 url: '/blog',
@@ -43,6 +42,7 @@
                                 controller: 'blogController',
                                 controllerAs: 'blog'
                         })
+
                         .state('contact', {
 
                                 url: '/contact',

@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#02468D">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#02468D">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#02468d">
 
     <link rel="stylesheet" type="text/css" href="./bower-components/components-font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./assests/lib/bootstrap.min.css">
@@ -28,11 +29,11 @@
                 <img src="/assests/images/man.svg" height="160" width="200" alt="profile pic">
                 <h1>Stephen njau</h1>
                 <p>Front-End / Javascript developer</p>
-                <div>
-                    <ul class="navigate">
-                        <li ng-repeat="pageName in main.pageNames track by $index" ng-class="{ 'slideRight' : main.toTheRight, 'slideLeft': main.toTheLeft, 'centerNav' : pageName == $state.current.name }"
+                <div class="nav-container">
+                    <ul id="nav" class="navigate">
+                        <li ng-repeat="pageName in main.pageNames track by $index" ng-class="{ 'current-nav' : pageName == $state.current.name, 'right-nav': main.pageNames.indexOf($state.current.name)+1 == $index, 'right-nav-outer': main.pageNames.indexOf($state.current.name)+2 == $index, 'left-nav': main.pageNames.indexOf($state.current.name)-1 == $index,'left-nav-outer': main.pageNames.indexOf($state.current.name)-2 == $index }"
                             ng-cloak>
-                            <a ui-sref="{{pageName}}" ng-click="main.moveToCenter(pageName)">{{pageName}}</a>
+                            <a ui-sref="{{pageName}}" ng-click="main.nextPage($index)">{{pageName}}</a>
                         </li>
 
                     </ul>
@@ -68,6 +69,6 @@
 <script type="text/javascript" src="./app/components/contact/contact.controller.js"></script>
 <script type="text/javascript" src="./app/components/blog/blog.controller.js"></script>
 <script type="text/javascript" src="./app/components/resume/resume.controller.js"></script>
-<!---->
+
 
 </html>
