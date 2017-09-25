@@ -59,4 +59,5 @@ typings/
 
 #Build folder
 
-_build
+_build/*
+_build/
