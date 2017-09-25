@@ -15,6 +15,8 @@
 
         var vm = this;
 
+        var statesToPush = ['resume', 'portifolio', 'about me', 'blog', 'contact'];
+
         vm.pageNames = $state.get().map(function (state) {
 
             return state.name;
@@ -25,10 +27,9 @@
 
             var previousStateIndex = vm.pageNames.indexOf($state.current.name);
 
+            console.log(" the previousStateIndex : " + previousStateIndex + "  => \n the next state is : " + nextStateIndex);
 
-            console.log(` the previousStateIndex : ${previousStateIndex}  => \n the next state is : ${nextStateIndex}  `);
-
-
+            $state.go(statesToPush[nextStateIndex]);
 
         };
 

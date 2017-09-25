@@ -10,14 +10,21 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#02468d">
 
-    <link rel="stylesheet" type="text/css" href="./bower-components/components-font-awesome/css/font-awesome.min.css">
+
+    <!-- CSS -->
+    <!-- build:css assests/css/style.min.css -->
+
     <link rel="stylesheet" type="text/css" href="./assests/lib/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./assests/lib/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./assests/css/main.css">
     <link rel="stylesheet" type="text/css" href="./bower-components/angular-loading-bar/build/loading-bar.min.css">
+    <link rel="stylesheet" type="text/css" href="./bower-components/components-font-awesome/css/font-awesome.min.css">
+
+    <!-- endbuild -->
     <!--fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700i,900,900i|Oswald:200,300,400,500,600,700|Tangerine:400,700"
+        rel="stylesheet">
+
     <title>njausteve</title>
 </head>
 
@@ -33,7 +40,7 @@
                     <ul id="nav" class="navigate">
                         <li ng-repeat="pageName in main.pageNames track by $index" ng-class="{ 'current-nav' : pageName == $state.current.name, 'right-nav': main.pageNames.indexOf($state.current.name)+1 == $index, 'right-nav-outer': main.pageNames.indexOf($state.current.name)+2 == $index, 'left-nav': main.pageNames.indexOf($state.current.name)-1 == $index,'left-nav-outer': main.pageNames.indexOf($state.current.name)-2 == $index }"
                             ng-cloak>
-                            <a ui-sref="{{pageName}}" ng-click="main.nextPage($index)">{{pageName}}</a>
+                            <a ng-click="main.nextPage($index)">{{pageName}}</a>
                         </li>
 
                     </ul>
@@ -46,23 +53,27 @@
 
     <div ui-view></div>
 </body>
-<!--external libraries  -->
+<!-- Angular libraries for application -->
+<!-- build:angularlibs assests/js/angularlibs.min.js -->
 <script type="text/javascript" src="./assests/lib/angular.min.js"></script>
 <script type="text/javascript" src="./assests/lib/angular-ui-router.min.js"></script>
 <script type="text/javascript" src="./assests/lib/angular-animate.min.js"></script>
 <script type="text/javascript" src="./assests/lib/loading-bar.min.js"></script>
 <script type="text/javascript" src="./assests/lib/ng-map.min.js"></script>
-<script src="http://maps.google.com/maps/api/js?key=AIzaSyD34UntJEPJVv0Kix-CjL0PfpUF5I3Jf7Q"></script>
-<!--->
 
-<!--application js files -->
+<!-- endbuild -->
+
+<!-- Angular components -->
+<!-- build:appcomponents assests/js/appcomponents.min.js -->
 <script type="text/javascript" src="./app/app.js"></script>
 <script type="text/javascript" src="./app/route.js"></script>
 <script type="text/javascript" src="./app/run.js"></script>
-<!---->
-
-<!--controllers  -->
 <script type="text/javascript" src="./app/main.controller.js"></script>
+<!-- endbuild -->
+
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyD34UntJEPJVv0Kix-CjL0PfpUF5I3Jf7Q"></script>
+<!--controllers  -->
+
 <script type="text/javascript" src="./app/components/aboutMe/aboutme.controller.js">
 </script>
 <script type="text/javascript" src="./app/components/portfolio/portfolio.controller.js"></script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#02468D">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#02468d">
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assests/css/style.min-55dc43a1.css"/>
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700i,900,900i|Oswald:200,300,400,500,600,700|Tangerine:400,700"
+        rel="stylesheet">
+
+    <title>njausteve</title>
+</head>
+
+<body ng-app="njausteve" class="ng-cloak view">
+    <!-- header section-->
+    <header class="head text-center" ng-controller="mainController as main">
+        <div class="container-fluid no-padding">
+            <div class="container" style="height: auto;">
+                <img src="/assests/images/man.svg" height="160" width="200" alt="profile pic">
+                <h1>Stephen njau</h1>
+                <p>Front-End / Javascript developer</p>
+                <div class="nav-container">
+                    <ul id="nav" class="navigate">
+                        <li ng-repeat="pageName in main.pageNames track by $index" ng-class="{ 'current-nav' : pageName == $state.current.name, 'right-nav': main.pageNames.indexOf($state.current.name)+1 == $index, 'right-nav-outer': main.pageNames.indexOf($state.current.name)+2 == $index, 'left-nav': main.pageNames.indexOf($state.current.name)-1 == $index,'left-nav-outer': main.pageNames.indexOf($state.current.name)-2 == $index }"
+                            ng-cloak>
+                            <a ng-click="main.nextPage($index)">{{pageName}}</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <!--endof: header-->
+
+    <div ui-view></div>
+</body>
+<!-- Angular libraries for application -->
+<script src="assests/js/angularlibs.min-b90493c2.js"></script>
+
+<!-- Angular components -->
+<script src="assests/js/appcomponents.min-31a20128.js"></script>
+
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyD34UntJEPJVv0Kix-CjL0PfpUF5I3Jf7Q"></script>
+<!--controllers  -->
+
+<script type="text/javascript" src="./app/components/aboutMe/aboutme.controller.js">
+</script>
+<script type="text/javascript" src="./app/components/portfolio/portfolio.controller.js"></script>
+<script type="text/javascript" src="./app/components/contact/contact.controller.js"></script>
+<script type="text/javascript" src="./app/components/blog/blog.controller.js"></script>
+<script type="text/javascript" src="./app/components/resume/resume.controller.js"></script>
+
+
+</html>
