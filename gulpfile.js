@@ -161,7 +161,8 @@ gulp.task('copy:bower', function () {
             './src/bower-components/angular/angular.min.js',
             './src/bower-components/angular-loading-bar/build/loading-bar.min.js',
             './src/bower-components/angular-animate/angular-animate.min.js',
-            './src/bower-components/ngmap/build/scripts/ng-map.min.js'
+            './src/bower-components/ngmap/build/scripts/ng-map.min.js',
+            './src/bower-components/oclazyload/dist/ocLazyLoad.min.js'
 
         ])
         .pipe(gulp.dest('./src/assests/lib/'));
@@ -287,7 +288,7 @@ gulp.task('usemin', function () {
         //add template path
 
         .pipe(htmlReplace({
-            'templates': '<script type="text/javascript" src= "js/templates.js"></scripts>   '
+            'templates': '<script type="text/javascript" src= "js/templates.js"  ></scripts>   '
         }))
         .pipe(usemin({
             css: [cleanCSS(), rev()],
