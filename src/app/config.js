@@ -37,7 +37,10 @@
                 // contact module
                 {
                     name: 'ContactModule',
-                    files: ['app/components/contact/contact.controller.js']
+                    files: ['app/components/contact/contact.controller.js', {
+                        type: 'js',
+                        path: 'http://maps.google.com/maps/api/js?key=AIzaSyD34UntJEPJVv0Kix-CjL0PfpUF5I3Jf7Q'
+                    }, 'app/externalModules/ng-map.min.js']
                 }
             ]
         });

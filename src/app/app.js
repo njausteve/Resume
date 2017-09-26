@@ -7,6 +7,6 @@
     'use strict';
 
     angular
-        .module('njausteve', ['ui.router', 'angular-loading-bar', 'oc.lazyLoad', 'ngAnimate', 'ngMap']);
+        .module('njausteve', ['ui.router', 'angular-loading-bar', 'oc.lazyLoad', 'ngAnimate']);
 
 })();

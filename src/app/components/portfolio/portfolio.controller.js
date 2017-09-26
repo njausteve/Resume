@@ -33,7 +33,7 @@
         vm.myProjects = [{
                 title: 'Online Resume',
                 id: 1,
-                img_url: 'https://unsplash.it/400/300?=2',
+                img_url: 'https://unsplash.it/400/300?=27',
                 Project_url: 'https://github.com/njausteve/Resume',
                 type: 'an illustration work',
                 desc: '',

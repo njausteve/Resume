@@ -207,7 +207,7 @@ gulp.task('images', function () {
 
 gulp.task('minify-html', function () {
 
-    gulp.src(['./src/**/**/**/*.html', '!./src/bower_components/**/*.html'])
+    gulp.src(['./src/**/**/**/*.html', '!./src/bower-components/**/*.html'])
         .pipe(bytediff.start())
         .pipe(htmlmin({
             collapseWhitespace: true,
@@ -222,7 +222,7 @@ gulp.task('minify-html', function () {
 // copy fonts from a module outside of our project (like Bower)
 // need to update !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 gulp.task('fonts', function () {
-    gulp.src('./src/**/**/**/*.{ttf,woff,eof,eot}')
+    gulp.src('./src/**/**/**/*.{ttf,woff,woff2,eof,eot}')
         .pipe(rename({
             dirname: ''
         }))
@@ -236,7 +236,7 @@ gulp.task('fonts', function () {
 // minify index file 
 
 gulp.task('minify-index-html', function () {
-    gulp.src(['./build/*.html'])
+    gulp.src(['./_build/*.html'])
         .pipe(bytediff.start())
         .pipe(htmlmin({
             collapseWhitespace: true,
@@ -247,17 +247,17 @@ gulp.task('minify-index-html', function () {
 
 });
 
-// minify css
-// minifyinf @src/assests/css/css 
-gulp.task('copy-css', function () {
-    gulp.src(['./src/assests/css/*.css'])
-        .pipe(bytediff.start())
-        .pipe(autoprefixer(['last 2 versions']))
-        .pipe(cleanCSS())
-        .pipe(bytediff.stop(bytediffFormatter))
-        .pipe(gulp.dest('./_build/assests/css/'));
+// // minify css
+// // minifyinf @src/assests/css/
+// gulp.task('copy-css', function () {
+//     gulp.src(['./src/assests/css/*.css',''])
+//         .pipe(bytediff.start())
+//         .pipe(autoprefixer(['last 2 versions']))
+//         .pipe(cleanCSS())
+//         .pipe(bytediff.stop(bytediffFormatter))
+//         .pipe(gulp.dest('./_build/assests/css/'));
 
-});
+// });
 
 // ngAnnotate and minify JS
 
@@ -288,7 +288,7 @@ gulp.task('usemin', function () {
         //add template path
 
         .pipe(htmlReplace({
-            'templates': '<script type="text/javascript" src= "js/templates.js"  ></scripts>   '
+            'templates': '<script type="text/javascript" src= "js/templates.js" ></scripts>   '
         }))
         .pipe(usemin({
             css: [cleanCSS(), rev()],
@@ -309,8 +309,6 @@ gulp.task('usemin', function () {
 
 
 //calculate build folder size 
-
-
 gulp.task('build:size', function () {
     var s = size();
 
@@ -333,6 +331,7 @@ gulp.task('copy', function () {
     return gulp.src(
             ['./src/*',
                 '!./src/*.html',
+                '!./src/bower-components/',
                 '!./src/*.js'
             ], {
                 dot: true
@@ -388,7 +387,6 @@ gulp.task('build', function (callback) {
         'clean-build',
         'sass',
         'minify-html',
-        'copy-css',
         'minify-js',
         'images',
         'fonts',
