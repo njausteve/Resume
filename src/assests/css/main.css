@@ -317,11 +317,35 @@ h5 {
     border: 1px solid #EAEDEF;
     border-radius: 0 0 4px 4px;
     margin-bottom: 30px; }
-    #my-works .content .single-work .work .mask img {
-      width: 100%;
-      height: auto; }
-      #my-works .content .single-work .work .mask img:hover {
-        opacity: .5; }
+    #my-works .content .single-work .work .mask {
+      position: relative; }
+      #my-works .content .single-work .work .mask img {
+        width: 100%;
+        height: auto; }
+        #my-works .content .single-work .work .mask img:hover {
+          opacity: .5; }
+      #my-works .content .single-work .work .mask:before {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -38px 0 0 -38px;
+        width: 76px;
+        line-height: 76px;
+        font-size: 18px;
+        text-align: center;
+        content: "\f0ca";
+        color: #fff;
+        background: #0092DA;
+        border-radius: 50%;
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        text-decoration: inherit;
+        visibility: hidden;
+        z-index: 100; }
+      #my-works .content .single-work .work .mask:hover:before {
+        visibility: visible; }
     #my-works .content .single-work .work .work-desc .title {
       font-family: 'Lato', sans-serif;
       text-transform: uppercase;
