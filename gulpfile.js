@@ -23,6 +23,7 @@ var gulp = require('gulp'),
     size = require('gulp-size'),
     cleanCSS = require('gulp-clean-css'),
     rename = require('gulp-rename'),
+    humans = require('gulp-humans'),
     saveLicense = require('uglify-save-license'),
     htmlReplace = require('gulp-html-replace'),
     ngAnnotate = require('gulp-ng-annotate'),
@@ -118,6 +119,32 @@ gulp.task('sassdoc', function () {
         .resume();
 });
 
+//human.text configuration
+
+gulp.task('humans', function () {
+    return gulp.src('./src/index.html')
+        .pipe(humans({
+            team: [{
+                "Designer, Developer, maintainer": "Stephen njau",
+                Twitter: "@Dominosteve",
+                emai: 'njaustevedomino@gmail.com'
+            }],
+            thanks: [
+                'Node',
+                'Gulp'
+            ],
+            site:
+            {
+                'Standards': 'HTML5, CSS3',
+                'Components': 'Bootstrap.css, AngularJs, OclazyLoad ',
+                'Softwares': 'Visual studio code, SublimeText3'
+            },
+            note: 'Built with love by Stephen njau .'
+        }))
+        .pipe(gulp.dest('./src/'));
+
+});
+
 // gulp watch task
 
 gulp.task('watch', function () {
@@ -156,15 +183,15 @@ gulp.task('clean-build', function (cb) {
 
 gulp.task('copy:bower', function () {
     gulp.src(['./src/bower-components/bootstrap/dist/jquery.min.js',
-            './src/bower-components/bootstrap/dist/css/bootstrap.min.css',
-            './src/bower-components/components-font-awesome/css/font-awesome.min.css',
-            './src/bower-components/angular/angular.min.js',
-            './src/bower-components/angular-loading-bar/build/loading-bar.min.js',
-            './src/bower-components/angular-animate/angular-animate.min.js',
-            './src/bower-components/ngmap/build/scripts/ng-map.min.js',
-            './src/bower-components/oclazyload/dist/ocLazyLoad.min.js'
+        './src/bower-components/bootstrap/dist/css/bootstrap.min.css',
+        './src/bower-components/components-font-awesome/css/font-awesome.min.css',
+        './src/bower-components/angular/angular.min.js',
+        './src/bower-components/angular-loading-bar/build/loading-bar.min.js',
+        './src/bower-components/angular-animate/angular-animate.min.js',
+        './src/bower-components/ngmap/build/scripts/ng-map.min.js',
+        './src/bower-components/oclazyload/dist/ocLazyLoad.min.js'
 
-        ])
+    ])
         .pipe(gulp.dest('./src/assests/lib/'));
 });
 
@@ -329,13 +356,13 @@ gulp.task('build:size', function () {
 gulp.task('copy', function () {
 
     return gulp.src(
-            ['./src/*',
-                '!./src/*.html',
-                '!./src/bower-components/',
-                '!./src/*.js'
-            ], {
-                dot: true
-            })
+        ['./src/*',
+            '!./src/*.html',
+            '!./src/bower-components/',
+            '!./src/*.js'
+        ], {
+            dot: true
+        })
         .pipe(gulp.dest('./_build'));
 
 
@@ -386,6 +413,7 @@ gulp.task('build', function (callback) {
     runSequence(
         'clean-build',
         'sass',
+        'humans',
         'minify-html',
         'minify-js',
         'images',
