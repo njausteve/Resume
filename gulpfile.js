@@ -141,7 +141,7 @@ gulp.task('humans', function () {
             },
             note: 'Built with love by Stephen njau .'
         }))
-        .pipe(gulp.dest('./src/'));
+        .pipe(gulp.dest('./_build/'));
 
 });
 
