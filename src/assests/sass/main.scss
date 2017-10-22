@@ -491,7 +491,37 @@ h5 {
     }
 }
 
-// resume page
+//portifolio details page
+
+.portfolio {
+    padding-top: 3em;
+    margin: auto;
+    max-width: 1440px;
+
+    @media screen and (max-width: 991px) {
+        width: 80%;
+    }
+
+    .portfolio-title {
+        @media screen and (max-width: 991px) {
+            text-align: center;
+            padding: 0 0 1em 0;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            margin: 0;
+            font-weight: 800;
+            color: 334455;
+
+            @media screen and (max-width: 991px) {
+                font-size: 1.5em;
+                padding-left: 0;
+            }
+        }
+    }
+}
+
 #resume {
     .content {
         padding-top: 2em;

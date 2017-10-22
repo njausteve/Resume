@@ -15,13 +15,15 @@
 
         var vm = this;
 
-        var statesToPush = ['resume', 'portifolio', 'about me', 'blog', 'contact'];
+
 
         vm.pageNames = $state.get().map(function (state) {
 
             return state.name;
 
         }).filter(Boolean);
+
+        var statesToPush = angular.copy(vm.pageNames);
 
         vm.nextPage = function (nextStateIndex) {
 

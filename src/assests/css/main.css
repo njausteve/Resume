@@ -361,6 +361,27 @@ h5 {
       line-height: 21.58px;
       color: #a7b6b9; }
 
+.portfolio {
+  padding-top: 3em;
+  margin: auto;
+  max-width: 1440px; }
+  @media screen and (max-width: 991px) {
+    .portfolio {
+      width: 80%; } }
+  @media screen and (max-width: 991px) {
+    .portfolio .portfolio-title {
+      text-align: center;
+      padding: 0 0 1em 0; } }
+  .portfolio .portfolio-title h2 {
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 800;
+    color: 334455; }
+    @media screen and (max-width: 991px) {
+      .portfolio .portfolio-title h2 {
+        font-size: 1.5em;
+        padding-left: 0; } }
+
 #resume .content {
   padding-top: 2em;
   position: relative;

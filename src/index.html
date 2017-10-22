@@ -27,7 +27,7 @@
 
 <body ng-app="njausteve" class="ng-cloak view">
     <!-- header section-->
-    <header class="head text-center" ng-controller="mainController as main" ng-hide="">
+    <header class="head text-center" ng-controller="mainController as main" ng-hide="$state.current.name == 'detail'">
         <div class="container-fluid no-padding">
             <div class="container" style="height: auto;">
                 <img src="/assests/images/man.svg" height="160" width="200" alt="profile pic">
@@ -35,7 +35,7 @@
                 <p>Front-End / Javascript developer</p>
                 <div class="nav-container">
                     <ul id="nav" class="navigate">
-                        <li ng-repeat="pageName in main.pageNames track by $index" ng-class="{ 'current-nav' : pageName == $state.current.name, 'right-nav': main.pageNames.indexOf($state.current.name)+1 == $index, 'right-nav-outer': main.pageNames.indexOf($state.current.name)+2 == $index, 'left-nav': main.pageNames.indexOf($state.current.name)-1 == $index,'left-nav-outer': main.pageNames.indexOf($state.current.name)-2 == $index }"
+                        <li ng-repeat="pageName in main.pageNames track by $index" ng-if="pageName !=='detail'" ng-class="{ 'current-nav' : pageName == $state.current.name, 'right-nav': main.pageNames.indexOf($state.current.name)+1 == $index, 'right-nav-outer': main.pageNames.indexOf($state.current.name)+2 == $index, 'left-nav': main.pageNames.indexOf($state.current.name)-1 == $index,'left-nav-outer': main.pageNames.indexOf($state.current.name)-2 == $index }"
                             ng-cloak>
                             <a ng-click="main.nextPage($index)">{{pageName}}</a>
                         </li>
@@ -47,7 +47,6 @@
         </div>
     </header>
     <!--endof: header-->
-
     <div ui-view></div>
 </body>
 <!-- Angular libraries for application -->

@@ -14,6 +14,22 @@
         function routerConfig($stateProvider, $urlRouterProvider, $locationProvider) {
                 $stateProvider
 
+                        .state('detail', {
+                                url: '/portifolio/:alias',
+                                views: {
+                                        '': {
+                                                templateUrl: '/app/components/portfolio/portifolio-details.html'
+                                        }
+                                },
+                                resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+                                        loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                                                // you can lazy load files for an existing module
+                                                return $ocLazyLoad.load('PortifolioModule');
+                                        }]
+                                }
+
+                        })
+
                         .state('resume', {
 
                                 url: '/resume',
@@ -29,6 +45,7 @@
                                 }
                         })
 
+
                         .state('portifolio', {
                                 url: '/portifolio',
                                 templateUrl: '/app/components/portfolio/portfolio.html',
@@ -41,6 +58,8 @@
                                         }]
                                 }
                         })
+
+
 
                         .state('about me', {
                                 url: '/about',
