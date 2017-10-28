@@ -497,6 +497,7 @@ h5 {
     padding-top: 3em;
     margin: auto;
     max-width: 1440px;
+    font-size: 16px;
 
     @media screen and (max-width: 991px) {
         width: 80%;
@@ -511,12 +512,223 @@ h5 {
         h2 {
             text-transform: uppercase;
             margin: 0;
+            line-height: 53.12px;
             font-weight: 800;
-            color: 334455;
+            color: #334455;
+            font-family: 'Lato';
+            font-size: 32px;
+            letter-spacing: normal;
 
             @media screen and (max-width: 991px) {
-                font-size: 1.5em;
+                font-size: 24px;
                 padding-left: 0;
+            }
+        }
+    }
+
+    .portfolio-nav {
+        text-align: right;
+        padding-bottom: 2em;
+
+        .button {
+            display: inline-block;
+            text-align: center;
+            padding: 0;
+            line-height: 33px;
+            width: 40px;
+            font-size: 18px;
+            color: #B7C6C9;
+            transition: color 0.1s, background-color 0.2s, border-color 0.2s;
+            border: 3px solid #DDE4E6;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .icon {
+            content: "\f105";
+            font-family: FontAwesome;
+            font-weight: normal;
+            font-style: normal;
+            display: inline-block;
+            text-decoration: none;
+
+            &:before {
+                content: "\f105";
+                font-family: FontAwesome;
+                font-weight: normal;
+                text-align: left;
+                font-style: normal;
+                display: inline-block;
+                text-decoration: inherit;
+            }
+        }
+
+        .back {
+            display: inline-block;
+            margin-left: .6em;
+            border-width: 0;
+            line-height: 70px;
+            width: 70px;
+            font-size: 16px;
+            color: #fff;
+            background: #0085CC;
+            border-radius: 50%;
+            text-decoration: none;
+
+            &:hover {
+                background: #EAC83D;
+            }
+
+            &:before {
+                display: inline;
+                content: "\f00d";
+                font-size: 1em;
+                font-family: FontAwesome;
+                font-weight: normal;
+                text-align: left;
+                font-style: normal;
+                display: inline-block;
+                text-decoration: inherit;
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+            text-align: center;
+        }
+    }
+
+    .portfolio-field {
+        padding-bottom: 2em;
+
+        @media screen and (max-width: 991px) {
+            padding: 0 0 1em 0;
+        }
+
+        img {
+            margin-bottom: 50px;
+            max-width: 100%;
+            height: auto;
+
+            @media screen and (max-width: 991px) {
+                margin-bottom: 1.8em;
+            }
+        }
+
+        h3 {
+            font-size: 1.20em;
+            margin: 1.0em 0 .6em 0;
+            margin: 2em 0 .6em 0;
+            font-size: 13px;
+            letter-spacing: .09em;
+            text-transform: uppercase;
+            font-weight: 800;
+            font-family: 'Lato';
+            line-height: 21.58px;
+            color: #c8d3d6;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            @media screen and (max-width: 991px) {
+                margin-top: 1em;
+            }
+        }
+
+        p {
+            font-family: 'Lato';
+            margin: 1.2em 0;
+            margin-top: 0;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
+        .tags {
+            margin: 0 0 1em 0;
+            padding: 5px;
+            list-style: none;
+
+            li {
+                display: inline-block;
+            }
+
+            a {
+                color: #345;
+                display: inline-block;
+                line-height: 30px;
+                font-size: 12px;
+                position: relative;
+                margin: 0 14px 8px 6px;
+                padding: 0 10px 0 12px;
+                background: #eaeeef;
+                text-transform: uppercase;
+                border-radius: 0 2px 2px 0;
+                text-decoration: none;
+
+                &:before {
+                    content: "";
+                    float: left;
+                    position: absolute;
+                    top: 0px;
+                    left: -11px;
+                    width: 0;
+                    height: 0;
+                    border-color: transparent;
+                    border-right-color: #EAEEEF;
+                    border-style: solid;
+                    border-width: 15px 11px 15px 0;
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 11px;
+                    left: 0;
+                    float: left;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background: #fff;
+                }
+            }
+        }
+
+        .launch {
+            text-align: left;
+            padding: 2.6em 0;
+
+            .button {
+                padding: 1.8em 3.6em;
+                line-height: 1;
+                display: inline-block;
+                position: relative;
+                padding: 1.3em 2.6em;
+                font-size: 11px;
+                letter-spacing: 1px;
+                font-weight: 800;
+                text-transform: uppercase;
+                line-height: 1.2;
+                border: 0;
+                outline: 0;
+                background: #fff;
+                border: 2px solid #6A7686;
+                color: #6A7686;
+                text-shadow: none;
+                border-radius: 4px;
+
+                &:hover {
+                    background: #0085CC;
+                    color: #fff;
+                    border-color: #0085CC;
+                    text-decoration: none;
+                    transition: all .2s;
+                }
+            }
+
+            @media screen and (max-width: 991px) {
+                text-align: center;
             }
         }
     }

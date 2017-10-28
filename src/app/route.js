@@ -15,16 +15,21 @@
                 $stateProvider
 
                         .state('detail', {
-                                url: '/portifolio/:alias',
+                                url: '/portifolio/:projectName',
+                                params: {
+                                        projectDetails: null
+                                },
                                 views: {
                                         '': {
-                                                templateUrl: '/app/components/portfolio/portifolio-details.html'
+                                                templateUrl: '/app/components/portfolio/portifolio-details.html',
+                                                controller: 'portifolioDetailsController',
+                                                controllerAs: 'project'
                                         }
                                 },
                                 resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
                                         loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                                                 // you can lazy load files for an existing module
-                                                return $ocLazyLoad.load('PortifolioModule');
+                                                return $ocLazyLoad.load('PortifolioDetailsModule');
                                         }]
                                 }
 

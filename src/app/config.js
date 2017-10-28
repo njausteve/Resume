@@ -25,6 +25,14 @@
                     name: 'PortifolioModule',
                     files: ['app/components/portfolio/portfolio.controller.js']
                 },
+
+                //portifolio module 
+                {
+                    name: 'PortifolioDetailsModule',
+                    files: ['app/components/portfolio/portfolio-detail.controller.js']
+
+                },
+
                 // blog module
                 {
                     name: 'BlogModule',
