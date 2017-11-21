@@ -1076,6 +1076,189 @@ h5 {
           font: 400 11px Roboto, Arial, sans-serif;
           text-decoration: none; }
 
+#blog {
+  position: relative;
+  z-index: 100; }
+  #blog .content {
+    position: relative;
+    padding: 1em 3em;
+    margin: auto;
+    width: 80%;
+    text-align: left; }
+    @media screen and (max-width: 767px) {
+      #blog .content {
+        padding: 1em; } }
+    #blog .content .section-title {
+      position: relative;
+      margin-bottom: 1em; }
+      #blog .content .section-title:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: 3px;
+        width: 100%;
+        border-bottom: 4px solid #F4F6F7; }
+      #blog .content .section-title span {
+        position: relative;
+        display: inline-block;
+        padding-right: 1.4em;
+        background: #fff;
+        font-size: 12px;
+        letter-spacing: 1px;
+        font-weight: 700; }
+        #blog .content .section-title span .icon-book-open {
+          font-size: 16px;
+          margin-right: 14px;
+          line-height: 39px;
+          text-align: center;
+          color: #B7C6C9;
+          background: #fff;
+          border-radius: 50%;
+          border: 4px solid #F4F6F7;
+          display: inline-block;
+          width: 47px; }
+          #blog .content .section-title span .icon-book-open::before {
+            content: '\e885';
+            font-family: "fontello";
+            font-style: normal;
+            font-weight: normal;
+            speak: none;
+            display: inline-block;
+            text-decoration: inherit;
+            width: 1em;
+            margin-right: .2em;
+            text-align: center;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1em;
+            margin-left: .2em; }
+    #blog .content .latest-posts {
+      margin-top: 2em;
+      min-height: 200px;
+      width: 102.8%;
+      margin-left: -1.4%; }
+      #blog .content .latest-posts .media-cell {
+        float: left;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box; }
+        #blog .content .latest-posts .media-cell .media-box {
+          position: relative;
+          margin-bottom: 30px;
+          background-color: #fff; }
+          #blog .content .latest-posts .media-cell .media-box .post_image {
+            display: block;
+            width: 100%;
+            height: auto; }
+          #blog .content .latest-posts .media-cell .media-box .mask {
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            text-align: center;
+            overflow: hidden;
+            background: #33475D;
+            background: rgba(51, 71, 93, 0.6);
+            -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out; }
+            #blog .content .latest-posts .media-cell .media-box .mask:before {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              margin: -38px 0 0 -38px;
+              width: 76px;
+              line-height: 76px;
+              font-size: 18px;
+              text-align: center;
+              content: "\f040";
+              color: #fff;
+              background: #096;
+              border-radius: 50%;
+              font-family: FontAwesome;
+              font-weight: normal;
+              text-align: left;
+              font-style: normal;
+              display: inline-block;
+              text-decoration: inherit; }
+          #blog .content .latest-posts .media-cell .media-box a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            opacity: 0; }
+        #blog .content .latest-posts .media-cell .media-cell-desc {
+          padding: 28px 40px;
+          border-style: solid;
+          border-width: 1px;
+          background: #fff;
+          border-color: #EAEDEF;
+          border-radius: 0 0 4px 4px; }
+          #blog .content .latest-posts .media-cell .media-cell-desc .date {
+            float: left;
+            margin-right: 16px;
+            padding: 6px 7px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1;
+            color: #fff;
+            border-radius: 2px;
+            margin-top: -66px;
+            position: relative;
+            background: #FFF;
+            margin-left: 0%;
+            background: #5BCF80; }
+            #blog .content .latest-posts .media-cell .media-cell-desc .date .day {
+              display: block;
+              font-size: 26px;
+              letter-spacing: -1px;
+              font-weight: 800;
+              color: #fff; }
+          #blog .content .latest-posts .media-cell .media-cell-desc h3 {
+            text-transform: uppercase;
+            padding: 0;
+            margin: 0px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: .03em; }
+          #blog .content .latest-posts .media-cell .media-cell-desc a {
+            color: #444;
+            border-bottom: 2px solid #FFF;
+            -webkit-transition: color 0.1s, background-color .2s, border-color .2s;
+            transition: color 0.1s, background-color .2s, border-color .2s; }
+    #blog .content .launch {
+      text-align: center;
+      padding: 2.6em 0;
+      text-align: center;
+      padding: 2.6em 0; }
+      #blog .content .launch .button {
+        padding: 1.8em 3.6em;
+        line-height: 1;
+        display: inline-block;
+        position: relative;
+        padding: 1.3em 2.6em;
+        font-size: 11px;
+        letter-spacing: 1px;
+        font-weight: 800;
+        text-transform: uppercase;
+        line-height: 1.2;
+        border: 0;
+        outline: 0;
+        background: #fff;
+        border: 2px solid #6A7686;
+        color: #6A7686;
+        text-shadow: none;
+        border-radius: 4px; }
+    #blog .content .center {
+      text-align: center; }
+
 @-webkit-keyframes rotateOutWord {
   0% {
     opacity: 1;
