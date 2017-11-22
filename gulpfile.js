@@ -183,6 +183,7 @@ gulp.task('clean-build', function (cb) {
 
 gulp.task('copy:bower', function () {
     gulp.src(['./src/bower-components/bootstrap/dist/jquery.min.js',
+        './src/bower-components/angular-ui-router/release/angular-ui-router.min.js',
         './src/bower-components/bootstrap/dist/css/bootstrap.min.css',
         './src/bower-components/components-font-awesome/css/font-awesome.min.css',
         './src/bower-components/angular/angular.min.js',
