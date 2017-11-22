@@ -2,11 +2,13 @@
 
 (c) njausteve 2017<i class="icon-anchor"></i> 
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
+[![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=my-website)](njausteve.github.io)
+[![npm](https://img.shields.io/npm/v/npm.svg)]()
+[![node](https://img.shields.io/node/v/passport.svg)]()
+[![Bower](https://img.shields.io/bower/v/bootstrap.svg)]()
 [![Downloads Stats][npm-downloads]][npm-url]
 
-This project is an online resume/ protifolio template as seen here [njausteve resume](https://njausteve.github.io). I built it from the ground up as a tool to showcase other my skills and projects done as well as tech articles i have written on [medium](https://medium.com/@njaustevedomino).
+This project is an online resume/ protifolio template as seen here [njausteve resume](https://njausteve.github.io). I built it from the ground up as a tool to showcase my dev skills and projects done as well as tech articles i have written and shared on [medium](https://medium.com/@njaustevedomino).
 
 ![](src/assests/images/readme_header.png)
 
@@ -59,7 +61,7 @@ gulp build
 ```bash
 gulp serve:build
 ```
-<br>
+
 
 
 ----------------
@@ -74,9 +76,9 @@ gulp serve:build
 
 <br>
 
-###Tech Stack
+## Tech Stack
 
-##Production
+### Production
 
 --------
    * [Angular JS 1.X](https://angularjs.org/) 
@@ -99,7 +101,8 @@ gulp serve:build
 `Version: 1.1.0`
 `License: The MIT License`
 
-##Developement
+### Developement
+--------------
   * [Sass](sass-lang.com)
 `Version: 3.4.23 `
 `License: The MIT License`
@@ -108,6 +111,7 @@ gulp serve:build
 `Version: 4`
 `License: The MIT License`
 
+<br>
 
 ## Meta
 
@@ -115,22 +119,21 @@ njausteve – [@Dominosteve](https://twitter.com/Dominosteve)
 <br>
  njaustevedomino@gmail.com
 
-Distributed under the MIT license. See ``LICENSE`` for more information.
+Distributed under the MIT license. See [``LICENSE``](LICENSE) for more information.
 
 [https://github.com/njausteve](https://github.com/njausteve/)
 
 ## Contributing
 
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
+1. Fork it (<https://github.com/njausteve/resume/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
 
 <!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
+
 [npm-url]: https://npmjs.org/package/datadog-metrics
 [npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/yourname/yourproject/wiki
+
