@@ -6,9 +6,7 @@
     "njausteve (njaustevedomino@gmail.com)"
   ],
   "license": "MIT",
-  "scripts": {
-    
-  },
+  "scripts": {},
   "keywords": [
     "resume",
     "njausteve",
@@ -30,7 +28,7 @@
     "bootstrap": "^3.3.7",
     "components-font-awesome": "^4.7.0",
     "angular": "^1.6.5",
-    "angular-ui-router": "0.3.1",
+    "angular-ui-router": "^1.0.11",
     "angular-animate": "1.6.5",
     "angular-loading-bar": "^0.9.0",
     "ngmap": "^1.18.4",

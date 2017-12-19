@@ -11,15 +11,45 @@
         .controller('contactController', contactController);
 
     /** @ngInject */
-    function contactController(NgMap) {
+    function contactController(NgMap, contactsService) {
 
         var vm = this;
 
         console.log("contactController loaded");
 
+        vm.mailer = {};
+
+
+        vm.sendEmail = _sendEmail;
+
+
+        //use contactsService to send mail
+        function _sendEmail(mailer) {
+
+            return contactsService.sendEmail(mailer).
+                then(function (response) {
+
+                console.log(response);
+
+                })
+                .catch(function (error) {
+
+                    console.log(error);
+
+                });
+
+        }
+
+
+
         NgMap.getMap().then(function (map) {
 
         });
+
+
+
+
+
 
     }
 

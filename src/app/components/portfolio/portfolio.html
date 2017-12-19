@@ -25,8 +25,9 @@
                         : portif.category ">
                 <div class="work ">
                     <div class="mask" ui-sref="detail({ projectName : project.alias, projectDetails : project})">
-                        <img src="{{project.img_url}} " alt="{{project.title}} " width="300 " height="300 ">
+                        <img src="{{project.img_name[0]}}" alt="{{project.title}} " width="300 " height="300 ">
                     </div>
+
                     <div class="work-desc ">
                         <h3 class="title ">
                             {{project.title}}

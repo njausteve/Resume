@@ -11,11 +11,16 @@
         .run(runBlock)
 
     /** @ngInject */
-    function runBlock($log, $rootScope, $state) {
+    function runBlock($log, $rootScope, $state, $location) {
 
 
         $log.info("Njausteve , 2017 \n Online Resume \n lets do this! ");
         $rootScope.$state = $state;
+
+
+        var url =  $location.protocol() + '://' + $location.host() + ':'+ $location.port();
+        $log.info(url);
+      
     }
 
 })();

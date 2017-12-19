@@ -23,7 +23,7 @@
                 // portifolio module
                 {
                     name: 'PortifolioModule',
-                    files: ['app/components/portfolio/portfolio.controller.js']
+                    files: ['app/components/portfolio/portfolio.controller.js', 'app/components/portfolio/portfolio.service.js']
                 },
 
                 //portifolio module 
@@ -45,7 +45,7 @@
                 // contact module
                 {
                     name: 'ContactModule',
-                    files: ['app/components/contact/contact.controller.js', {
+                    files: ['app/components/contact/contact.controller.js', 'app/components/contact/contact.service.js', {
                         type: 'js',
                         path: 'http://maps.google.com/maps/api/js?key=AIzaSyD34UntJEPJVv0Kix-CjL0PfpUF5I3Jf7Q'
                     }, 'app/externalModules/ng-map.min.js']

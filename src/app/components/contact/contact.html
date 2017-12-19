@@ -26,19 +26,26 @@
                             <i class="fa fa-paper-plane" aria-hidden="true"></i>DROP ME A LINE</span>
                     </h2>
                     <div class="contact-form">
-                        <form id="contact-form" method="post">
+                        <form id="contact-form" name="mailerForm" ng-submit= "contact.sendEmail(contact.mailer)" novalidate>
                             <p>
                                 <label for="name">NAME</label>
-                                <input type="text" id="name" name="name" class="required">
+                                <input type="text" name="name" id="name" ng-model= "contact.mailer.name" aria-describedby="name" ng-required="true" >
+                                
+                            <span ng-show="mailerForm.name.$invalid && !mailerForm.name.$pristine" class="error-block" > * Your name is required</span>
+                                
                             </p>
                             <p>
                                 <label for="email">EMAIL</label>
-                                <input type="text" id="email" name="email" class="required email">
+                                <input type="email" id="email" name="email" ng-model= "contact.mailer.email" aria-describedby="email"  ng-required="true">
+                                <span ng-show="mailerForm.email.$invalid && !mailerForm.email.$pristine" class="error-block" >* Enter a valid email address</span>
+
                             </p>
                             <p>
-                                <label for="message">MESSAGE</label>
-                                <textarea id="message" name="message" class="required"></textarea>
+                                <label for="message">MESSAGE </label>
+                                <textarea id="message" name="message"  ng-model= "contact.mailer.message"  aria-describedby="message"  ng-required="true"></textarea>
                             </p>
+
+                            <p ng-show="mailForm.message.$invalid && !mailForm.message.$pristine" class="error-block"> * Message required.</p>
                             <p style="padding: 0px; margin: 0px;">
                                 <inpdisut type="hidden" id="captcha" name="captcha" value="no">
                             </p>
@@ -49,11 +56,11 @@
                                 <input type="hidden" id="subject" name="subject" value="">
                             </p>
                             <p>
-                                <input type="submit" class="submit button primary" value="SEND">
+                                <input type="submit" class="submit button primary" ng-disabled="mailerForm.$invalid" >
                             </p>
                         </form>
                     </div>
-                </div>
+                </div> 
                 <div class=" col-md-6">
                     <h2 class="section-title">
                         <span>
