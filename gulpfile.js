@@ -190,6 +190,8 @@ gulp.task('copy:bower', function () {
         './src/bower-components/angular-loading-bar/build/loading-bar.min.js',
         './src/bower-components/angular-animate/angular-animate.min.js',
         './src/bower-components/ngmap/build/scripts/ng-map.min.js',
+        './src/bower-components/ng-notify/dist/*.min.*',
+        './src/bower-components/angular-sanitize/angular-sanitize.min.js',
         './src/bower-components/oclazyload/dist/ocLazyLoad.min.js'
 
     ])

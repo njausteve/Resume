@@ -8,10 +8,10 @@
 
     angular
         .module('njausteve')
-        .run(runBlock)
+        .run(runBlock);
 
     /** @ngInject */
-    function runBlock($log, $rootScope, $state, $location) {
+    function runBlock($log, $rootScope, $state, $location, ngNotify) {
 
 
         $log.info("Njausteve , 2017 \n Online Resume \n lets do this! ");
@@ -20,6 +20,8 @@
 
         var url =  $location.protocol() + '://' + $location.host() + ':'+ $location.port();
         $log.info(url);
+
+        $rootScope.appUrl = url;
       
     }
 

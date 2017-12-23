@@ -26,18 +26,18 @@
                             <i class="fa fa-paper-plane" aria-hidden="true"></i>DROP ME A LINE</span>
                     </h2>
                     <div class="contact-form">
-                        <form id="contact-form" name="mailerForm" ng-submit= "contact.sendEmail(contact.mailer)" novalidate>
+                        <form id="contact-form" name="contact.mailerForm" ng-submit= "contact.sendEmail(contact.mailer)" novalidate>
                             <p>
                                 <label for="name">NAME</label>
                                 <input type="text" name="name" id="name" ng-model= "contact.mailer.name" aria-describedby="name" ng-required="true" >
                                 
-                            <span ng-show="mailerForm.name.$invalid && !mailerForm.name.$pristine" class="error-block" > * Your name is required</span>
+                            <span ng-show="contact.mailerForm.name.$invalid && !contact.mailerForm.name.$pristine" class="error-block" > * Your name is required</span>
                                 
                             </p>
                             <p>
                                 <label for="email">EMAIL</label>
                                 <input type="email" id="email" name="email" ng-model= "contact.mailer.email" aria-describedby="email"  ng-required="true">
-                                <span ng-show="mailerForm.email.$invalid && !mailerForm.email.$pristine" class="error-block" >* Enter a valid email address</span>
+                                <span ng-show="contact.mailerForm.email.$invalid && !contact.mailerForm.email.$pristine" class="error-block" >* Enter a valid email address</span>
 
                             </p>
                             <p>
@@ -55,8 +55,8 @@
                             <p style="padding: 0px; margin: 0px;">
                                 <input type="hidden" id="subject" name="subject" value="">
                             </p>
-                            <p>
-                                <input type="submit" class="submit button primary" ng-disabled="mailerForm.$invalid" >
+                            <p class="submit-button">
+                                <input type="submit" class="submit button primary" ng-disabled="contact.mailerForm.$invalid" >
                             </p>
                         </form>
                     </div>
@@ -68,9 +68,7 @@
                     </h2>
                     <div class="links">
                         <ul class="social">
-                            <li>
-                                <a target="_blank" class="fa fa-facebook" href="https://web.facebook.com/njausteve?_rdc=1&_rdr"></a>
-                            </li>
+                           
                             <li>
                                 <a target="_blank" class="fa fa-twitter" href="https://twitter.com/dominosteve"></a>
                             </li>
@@ -89,9 +87,7 @@
                             <li>
                                 <a target="_blank" class="fa fa-dribbble" href="#"></a>
                             </li>
-                            <li>
-                                <a target="_blank" class="fa fa-instagram" href="https://www.instagram.com/njausteve/"></a>
-                            </li>
+                           
                             <li>
                                 <a target="_blank" class="fa fa-skype" href="#"></a>
                             </li>

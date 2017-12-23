@@ -1,21 +1,35 @@
 // app/routes.js
 var Project = require('./models/project'),
     project = new Project(),
+    getLatestTweet = require('./twitter'),
     sendEmail = require('./email');
 
 module.exports = function (app) {
 
     //server routes
 
+    //get aabout me data
+    app.get('/api/aboutMe', function (req, res) {
 
-    app.get('/api/resume', function (req, res) {
 
-        var response = {};
 
-        response.message = "horray we are in";
-        response.requestTime = req.requestTime;
+        //  write function to    1. get latest post id from db  -> fetch latest tweet from twitter -> 
+                                  
 
-        res.json(response);
+        //fetch  latest tweet from twitter
+        getLatestTweet.get('statuses/user_timeline', { user_id: 355697964, count: 2, tweet_mode: 'extended' }, function (err, data, response) {
+            console.log(data[0]);
+
+
+            if (err)
+            res.send(err);
+
+        res.json(data[0]);
+
+        });
+
+     
+          
     });
 
     // get all projects 
@@ -78,27 +92,27 @@ module.exports = function (app) {
 
 
         req.checkBody('email', "must be a valid email address").isEmail();
-       
+
         var errors = req.validationErrors();
         if (errors) {
             res.send(errors);
             return;
 
         } else {
-              
+
             var mailOptions = sendEmail.mailOptions;
-                mailOptions.text = req.body.message;
-                mailOptions.subject = "contact from : " + req.body.email;
-           
+            mailOptions.text = req.body.message;
+            mailOptions.subject = "contact from : " + req.body.email;
+
             // nodemailer
             sendEmail.transporter.sendMail(mailOptions, function (err, info) {
 
 
                 if (err) {
 
-                    console.log(err);
+                    console.log(err.response);
                     return res.send(err);
-                    
+
                 }
 
                 res.json(info);

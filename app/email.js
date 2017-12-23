@@ -1,7 +1,7 @@
 
 
 var nodemailer = require('nodemailer');
-
+    
 module.exports = {
 
 
@@ -9,15 +9,15 @@ module.exports = {
             service: 'gmail',
             auth: {
                   //find out about tokens in Gmail
-                  user: 'njaustevedomain@gmail.com',
-                  pass: 'domino12@#njau'
+                  user: process.env.MailUser,
+                  pass: process.env.MailPass
             }
       }),
 
       mailOptions: {
 
-            from: 'njaustevedomain@gmail.com',
-            to: 'stephen.njau@aiesec.net',
+            from: process.env.MailFrom,
+            to: process.env.MailTo,
             subject: '',
             text: '',
             html: ''

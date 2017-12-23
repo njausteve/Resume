@@ -917,6 +917,9 @@ h5 {
   #contact .content .contact-form {
     margin: 1.6em 0 3em 0;
     overflow: auto; }
+    @media screen and (max-width: 767px) {
+      #contact .content .contact-form {
+        padding: 0 15px; } }
     #contact .content .contact-form p {
       margin: 0 0 1.8em 0;
       width: 50%;
@@ -1000,6 +1003,9 @@ h5 {
         letter-spacing: 1px;
         color: #6a7666;
         text-transform: uppercase; }
+    @media screen and (max-width: 767px) {
+      #contact .content .contact-form .submit-button {
+        text-align: center; } }
     #contact .content .contact-form::-webkit-input-placeholder {
       color: rgba(106, 118, 134, 0.4); }
   #contact .content .links .social {
@@ -1010,13 +1016,17 @@ h5 {
       display: inline-block;
       padding: 0;
       margin-bottom: -3px; }
+      @media screen and (max-width: 767px) {
+        #contact .content .links .social li {
+          padding-left: 20px;
+          padding-top: 15px; } }
       #contact .content .links .social li a {
         display: block;
         float: left;
         margin: 0 .4em .3em 0;
         text-align: center;
         font-size: 20px;
-        width: 42px;
+        width: 50px;
         line-height: 40px;
         color: #516075;
         border-radius: 4px;
@@ -1137,7 +1147,6 @@ h5 {
             font-family: "fontello";
             font-style: normal;
             font-weight: normal;
-            speak: none;
             display: inline-block;
             text-decoration: inherit;
             width: 1em;
@@ -1339,5 +1348,11 @@ h5 {
   transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
   -webkit-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0); }
+
+.ngn-success {
+  background-color: #f3be27f0 !important; }
+
+.ngn-error {
+  background-color: #ff5252d6 !important; }
 
 /*# sourceMappingURL=main.css.map */

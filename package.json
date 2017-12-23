@@ -23,13 +23,15 @@
   "homepage": "https://github.com/njausteve/Resume#readme",
   "dependencies": {
     "body-parser": "~1.4.2",
+    "dotenv": "^4.0.0",
     "express": "~4.5.1",
     "express-validator": "^4.3.0",
     "method-override": "~2.0.2",
     "mongoose": "^4.4.20",
     "mongoose-timestamp": "^0.6.0",
     "morgan": "^1.9.0",
-    "nodemailer": "^4.4.1"
+    "nodemailer": "^4.4.1",
+    "twit": "^2.2.9"
   },
   "devDependencies": {
     "browser-sync": "^2.18.12",
@@ -84,6 +86,7 @@
     "watch": "^0.13.0"
   },
   "scripts": {
-    "postinstall": "[ \"$NODE_ENV\" != production ] && bower install --no-interactive --allow-root && gulp copy:bower"
+    "postinstall": "[ \"$NODE_ENV\" != production ] && bower install --no-interactive --allow-root && gulp copy:bower",
+    "start": "node server.js"
   }
 }

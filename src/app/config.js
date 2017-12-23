@@ -40,7 +40,7 @@
                 }, // About me module
                 {
                     name: 'AboutMeModule',
-                    files: ['app/components/aboutMe/aboutme.controller.js']
+                    files: ['app/components/aboutMe/aboutme.controller.js', 'app/components/aboutMe/aboutme.service.js']
                 },
                 // contact module
                 {
