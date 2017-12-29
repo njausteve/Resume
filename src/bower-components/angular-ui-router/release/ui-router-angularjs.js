@@ -1,7 +1,7 @@
 /**
  * State-based routing for AngularJS 1.x
  * This bundle requires the ui-router-core.js bundle from the @uirouter/core package.
- * @version v1.0.11
+ * @version v1.0.12
  * @link https://ui-router.github.io
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
@@ -456,13 +456,18 @@ var getStateHookBuilder = function (hookName) {
         var pathname = hookName === 'onExit' ? 'from' : 'to';
         function decoratedNg1Hook(trans, state) {
             var resolveContext = new core.ResolveContext(trans.treeChanges(pathname));
-            var locals = core.extend(getLocals(resolveContext), { $state$: state, $transition$: trans });
+            var subContext = resolveContext.subContext(state.$$state());
+            var locals = core.extend(getLocals(subContext), { $state$: state, $transition$: trans });
             return core.services.$injector.invoke(hook, this, locals);
         }
         return hook ? decoratedNg1Hook : undefined;
     };
 };
 
+/**
+ * @internalapi
+ * @module ng1
+ */ /** */
 /**
  * Implements UI-Router LocationServices and LocationConfig using Angular 1's $location service
  */
@@ -487,7 +492,7 @@ var Ng1LocationServices = /** @class */ (function () {
     };
     Ng1LocationServices.prototype.url = function (newUrl, replace, state) {
         if (replace === void 0) { replace = false; }
-        if (newUrl)
+        if (core.isDefined(newUrl))
             this.$location.url(newUrl);
         if (replace)
             this.$location.replace();
@@ -1423,7 +1428,7 @@ uiState = ['$uiRouter', '$timeout',
  * </div>
  * ```
  *
- * When the current state is "admin.roles" the "active" class will be applied to both the <div> and <a> elements.
+ * When the current state is "admin.roles" the "active" class will be applied to both the `<div>` and `<a>` elements.
  * It is important to note that the state names/globs passed to `ui-sref-active` override any state provided by a linked `ui-sref`.
  *
  * ### Notes:

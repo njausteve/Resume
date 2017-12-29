@@ -2,6 +2,7 @@
 var Project = require('./models/project'),
     project = new Project(),
     getLatestTweet = require('./twitter'),
+    feed = require('feed-read'),
     sendEmail = require('./email');
 
 module.exports = function (app) {
@@ -14,7 +15,7 @@ module.exports = function (app) {
 
 
         //  write function to    1. get latest post id from db  -> fetch latest tweet from twitter -> 
-                                  
+
 
         //fetch  latest tweet from twitter
         getLatestTweet.get('statuses/user_timeline', { user_id: 355697964, count: 2, tweet_mode: 'extended' }, function (err, data, response) {
@@ -22,14 +23,33 @@ module.exports = function (app) {
 
 
             if (err)
-            res.send(err);
+                res.send(err);
 
-        res.json(data[0]);
+            res.json(data[0]);
 
         });
+    });
 
-     
-          
+    // get medium posts
+
+    app.get('/api/articles', function (req, res) {
+
+        var mediumProfileUrl = "https://medium.com/feed/@" + process.env.MEDIUM_USERNAME;
+
+        console.log(mediumProfileUrl);
+
+        feed( mediumProfileUrl , function(err, articles) {
+
+                        if (err)
+                            res.send(err);
+
+                    res.json(articles);
+
+                    console.log(articles);
+
+                
+            });
+
     });
 
     // get all projects 

@@ -293,17 +293,16 @@ gulp.task('minify-index-html', function () {
 
 gulp.task('minify-js', function () {
     gulp.src(['./src/app/**/*.js', '!./src/app/**/*.spec.js', '!./src/app/*.js'])
-        .pipe(ngAnnotate({
+      .pipe(ngAnnotate({
             add: true,
             single_quotes: true
-        }))
+        }))  
         .pipe(bytediff.start())
         .pipe(uglify({
             output: {
-
                 comments: saveLicense
             }
-        }))
+        })) 
         .pipe(bytediff.stop(bytediffFormatter))
         .pipe(gulp.dest('./_build/app'));
 });
@@ -417,8 +416,8 @@ gulp.task('build', function (callback) {
         'clean-build',
         'sass',
         'humans',
-        'minify-html',
         'minify-js',
+        'minify-html',
         'images',
         'fonts',
         'usemin',

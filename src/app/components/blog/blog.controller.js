@@ -11,12 +11,51 @@
         .controller('blogController', blogController);
 
     /** @ngInject */
-    function blogController() {
+    function blogController(blogService, ngNotify) {
 
         var vm = this;
 
         console.log("blogController loaded");
 
+        vm.posts = [];
+
+        vm.quantity = 3;
+        vm.level =  "ALL";
+
+        vm.toggleQuantity = function (){
+            if (vm.quantity == 3){
+                 
+                 vm.quantity = "";
+                 vm.level ="LESS";  
+            }else{
+                 
+                vm.quantity = 3;
+                vm.level =  "ALL";  
+            }
+
+        };
+
+        function getArticles(){
+
+            return blogService.getBlogArticles()
+
+            .then( function(response){
+                  
+                  vm.posts = response;
+
+               console.log(response);   
+
+            })
+            .catch( function(error){
+
+                ngNotify.set(error, 'error');    
+
+                    console.log(error);
+            });
+        }
+
+
+        getArticles();
 
     }
 

@@ -15,6 +15,7 @@
                 $stateProvider
 
                         .state('detail', {
+
                                 url: '/portifolio/:projectName',
                                 params: {
                                         projectDetails: null
@@ -64,8 +65,6 @@
                                 }
                         })
 
-
-
                         .state('about me', {
                                 url: '/about',
                                 templateUrl: '/app/components/aboutMe/about.html',
@@ -78,6 +77,7 @@
                                         }]
                                 }
                         })
+
                         .state('blog', {
 
                                 url: '/blog',

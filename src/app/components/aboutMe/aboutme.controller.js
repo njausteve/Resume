@@ -37,8 +37,6 @@
           })
           .catch(function (error) {
 
-              ngNotify.set(error, 'error');
-
               console.log(error);
 
           });

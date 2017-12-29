@@ -32,12 +32,12 @@
                     files: ['app/components/portfolio/portfolio-detail.controller.js']
 
                 },
-
                 // blog module
                 {
                     name: 'BlogModule',
-                    files: ['app/components/blog/blog.controller.js']
-                }, // About me module
+                    files: ['app/components/blog/blog.controller.js','app/components/blog/blog.service.js']
+                }, 
+                // About me module
                 {
                     name: 'AboutMeModule',
                     files: ['app/components/aboutMe/aboutme.controller.js', 'app/components/aboutMe/aboutme.service.js']
@@ -48,7 +48,7 @@
                     files: ['app/components/contact/contact.controller.js', 'app/components/contact/contact.service.js', {
                         type: 'js',
                         path: 'http://maps.google.com/maps/api/js?key=AIzaSyD34UntJEPJVv0Kix-CjL0PfpUF5I3Jf7Q'
-                    }, 'app/externalModules/ng-map.min.js']
+                    }, 'assests/lib/ng-map.min.js']
                 }
             ]
         });
