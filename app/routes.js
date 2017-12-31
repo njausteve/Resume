@@ -24,8 +24,36 @@ module.exports = function (app) {
 
             if (err)
                 res.send(err);
+<<<<<<< HEAD
 
             res.json(data[0]);
+=======
+
+            res.json(data[0]);
+
+        });
+
+
+
+    });
+
+    // get medium posts
+    app.get('/api/articles', function (req, res) {
+
+        var mediumProfileUrl = "https://medium.com/feed/@" + process.env.MEDIUM_USERNAME;
+
+        console.log(mediumProfileUrl);
+
+        feed(mediumProfileUrl, function (err, articles) {
+
+            if (err)
+                res.send(err);
+
+            res.json(articles);
+
+            console.log(articles);
+
+>>>>>>> 277a7c8... added Medium fetch API endpoint
 
         });
     });

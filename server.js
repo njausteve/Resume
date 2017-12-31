@@ -19,23 +19,9 @@ if (process.env.NODE_ENV !== 'production') {
 //configuration =================================
 
 // URLS AND VARIABLES =======================
-
 var port = process.env.PORT || 8088;
 
-// logger function
-
-var requestTime = function (req, res, next) {
-  req.requestTime = Date.now();
-  next();
-};
-
-//use our logger middleware function
-
-app.use(requestTime);
-
-
 // add logging
-
 app.use(morgan('dev'));
 
 //parse  application/json
