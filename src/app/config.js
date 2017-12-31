@@ -35,9 +35,14 @@
                 // blog module
                 {
                     name: 'BlogModule',
+<<<<<<< HEAD
                     files: ['app/components/blog/blog.controller.js','app/components/blog/blog.service.js']
                 }, 
                 // About me module
+=======
+                    files: ['app/components/blog/blog.controller.js', 'app/components/blog/blog.service.js']
+                }, // About me module
+>>>>>>> 5a96886... added medium article fetching front End
                 {
                     name: 'AboutMeModule',
                     files: ['app/components/aboutMe/aboutme.controller.js', 'app/components/aboutMe/aboutme.service.js']
