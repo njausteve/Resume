@@ -51,6 +51,9 @@
 =======
 
                         ngNotify.set( "Email not sent Try again" + mailer.name, 'error');
+<<<<<<< HEAD
+>>>>>>> f0d8c6f... Remove console logs for prod : gulp
+=======
 >>>>>>> f0d8c6f... Remove console logs for prod : gulp
                     }
                 })

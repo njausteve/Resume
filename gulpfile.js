@@ -316,6 +316,9 @@ gulp.task('minify-js', function () {
             title: 'minify js Failed',
             message: `Error(s) occurred during compile! : <%= error.message %>`
         }))
+<<<<<<< HEAD
+>>>>>>> f0d8c6f... Remove console logs for prod : gulp
+=======
 >>>>>>> f0d8c6f... Remove console logs for prod : gulp
         .pipe(bytediff.stop(bytediffFormatter))
         .pipe(gulp.dest('./_build/app'));
