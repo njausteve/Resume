@@ -25,9 +25,12 @@ module.exports = function (app) {
             if (err)
                 res.send(err);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             res.json(data[0]);
 =======
+=======
+>>>>>>> 277a7c8... added Medium fetch API endpoint
 
             res.json(data[0]);
 
@@ -53,6 +56,9 @@ module.exports = function (app) {
 
             console.log(articles);
 
+<<<<<<< HEAD
+>>>>>>> 277a7c8... added Medium fetch API endpoint
+=======
 >>>>>>> 277a7c8... added Medium fetch API endpoint
 
         });
