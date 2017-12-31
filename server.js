@@ -75,7 +75,7 @@ app.use(validator({
 }));
 
 //set the  static file location /src
-app.use(express.static(__dirname + '/src'));
+app.use(express.static(__dirname + '/_build'));
 
 //routes ==========
 

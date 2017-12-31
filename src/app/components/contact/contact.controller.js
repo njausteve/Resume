@@ -45,8 +45,13 @@
                         }
     
                     }else{
+<<<<<<< HEAD
     
                         ngNotify.set( "Email not sent Try again " + mailer.name, 'error');
+=======
+
+                        ngNotify.set( "Email not sent Try again" + mailer.name, 'error');
+>>>>>>> f0d8c6f... Remove console logs for prod : gulp
                     }
                 })
                 .catch(function (error) {

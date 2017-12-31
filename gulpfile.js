@@ -181,7 +181,7 @@ gulp.task('clean-build', function (cb) {
 
 // copy bower components to lib folder
 
-gulp.task('copy:bower', function () {
+gulp.task('copy:bower', ['copy:externalModules'],  function () {
     gulp.src(['./src/bower-components/bootstrap/dist/jquery.min.js',
         './src/bower-components/angular-ui-router/release/angular-ui-router.min.js',
         './src/bower-components/bootstrap/dist/css/bootstrap.min.css',
@@ -189,7 +189,6 @@ gulp.task('copy:bower', function () {
         './src/bower-components/angular/angular.min.js',
         './src/bower-components/angular-loading-bar/build/loading-bar.min.js',
         './src/bower-components/angular-animate/angular-animate.min.js',
-        './src/bower-components/ngmap/build/scripts/ng-map.min.js',
         './src/bower-components/ng-notify/dist/*.min.*',
         './src/bower-components/angular-sanitize/angular-sanitize.min.js',
         './src/bower-components/oclazyload/dist/ocLazyLoad.min.js'
@@ -198,8 +197,12 @@ gulp.task('copy:bower', function () {
         .pipe(gulp.dest('./src/assests/lib/'));
 });
 
+//copy bower components that are loaded when view loads (eg Ng-map in contacts state).
 
-
+gulp.task('copy:externalModules', function () {
+    gulp.src([ './src/bower-components/ngmap/build/scripts/ng-map.min.js'])
+        .pipe(gulp.dest('./src/app/externalModules'));
+});
 
 
 // production 
@@ -299,10 +302,21 @@ gulp.task('minify-js', function () {
         }))  
         .pipe(bytediff.start())
         .pipe(uglify({
+            compress: { 
+                drop_console: true 
+                  },
             output: {
                 comments: saveLicense
             }
+<<<<<<< HEAD
         })) 
+=======
+        }))
+        .on('error', notify.onError({
+            title: 'minify js Failed',
+            message: `Error(s) occurred during compile! : <%= error.message %>`
+        }))
+>>>>>>> f0d8c6f... Remove console logs for prod : gulp
         .pipe(bytediff.stop(bytediffFormatter))
         .pipe(gulp.dest('./_build/app'));
 });
