@@ -223,7 +223,7 @@ gulp.task('prod', ['sassdoc'], function () {
 
 gulp.task('images', function () {
 
-    return gulp.src('./src/assests/images/*.*')
+    return gulp.src(['./src/assests/images/*.*','./src/assests/images/*/*.*'])
         .pipe(changed('./_build/src/assests/images/'))
         .pipe(imagemin({
             optimizationLevel: 3,

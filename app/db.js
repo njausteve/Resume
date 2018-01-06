@@ -1,6 +1,13 @@
 
 var mongoose = require('mongoose'),
-       dbURI = 'mongodb://localhost/test'; 
+//  production
+     //  dbURI = 'mongodb://database:27017/test'; 
+
+    //  dev 
+    
+    dbURI = 'mongodb://localhost/test'; 
+    
+    
 
  module.exports = function(app){  
    
@@ -9,8 +16,8 @@ var mongoose = require('mongoose'),
    
          console.log('Mongoose default connection open to ' + dbURI);
     });
-   mongoose.connection.on('error', function(){
-       console.log("mongoose default connection error : " + err);
+   mongoose.connection.on('error', function(error){
+       console.log("mongoose default connection error : " + error);
    }); 
    
    mongoose.connection.on("disconnected", function(){

@@ -27,8 +27,13 @@
     "express": "~4.16.2",
     "express-validator": "^4.3.0",
     "feed-read": "0.0.1",
+<<<<<<< HEAD
     "method-override": "~2.3.10",
     "mongoose": "^5.0.0-rc0",
+=======
+    "method-override": "~2.0.2",
+    "mongoose": "^4.4.20",
+>>>>>>> e7723b2... added docker assets
     "mongoose-timestamp": "^0.6.0",
     "morgan": "^1.9.0",
     "nodemailer": "^4.4.1",
