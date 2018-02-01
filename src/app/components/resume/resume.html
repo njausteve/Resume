@@ -11,7 +11,7 @@
                             <h4>{{job.title}}</h4>
                             <h5>{{job.company}}</h5>
                             <p>{{job.desc}}</p>
-                            <h6>{{job.location}}</h6>
+                            <h6>{{job.location[0]}}</h6>
                         </div>
                     </div>
                     <!-- endof: work section -->
@@ -30,30 +30,14 @@
                 <div class=" col-md-6">
                     <h2 class="section-title"><span><i class="fa fa-cog" aria-hidden="true"></i>DEVELOPMENT SKILLS</span></h2>
                     <div class="skillset">
-                        <div class="skill-unit">
-                            <h4>HTML5</h4>
-                            <div class="bar" data-percent="100">
-                                <div class="progress" style="width: 100%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-unit">
-                            <h4>CSS3</h4>
-                            <div class="bar" data-percent="50">
-                                <div class="progress" style="width: 50%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-unit">
-                            <h4>jQuery</h4>
-                            <div class="bar" data-percent="70">
-                                <div class="progress" style="width: 70%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-unit">
-                            <h4>WordPress</h4>
-                            <div class="bar" data-percent="100">
-                                <div class="progress" style="width: 100%;"></div>
-                            </div>
-                        </div>
+                        
+                            <div class="skill-unit" ng-repeat="skill in resume.devSkills">
+                                <h4>{{skill}}</h4>
+                                <div class="bar" data-percent="85">
+                                    <div class="progress" style="width: 100%;"></div>
+                                </div>
+                            </div>     
+                        
                     </div>
                     <h2 class="section-title"><span><i class="fa fa-paint-brush"></i>DESIGN SKILLS</span></h2>
                     <div class="skillset">
@@ -78,23 +62,12 @@
                     </div>
                     <h2 class="section-title"><span><i class="fa fa-comment-o"></i>TESTIMONIALS</span></h2>
                     <div class="testo-group">
-                        <div class="testo"><img alt="PHILLIP AUSTIN" src="http://themes.pixelwars.org/cvcard-wp/wp-content/uploads/2014/04/testo-01.jpg">
+                        <div class="testo" ng-repeat="testimony in resume.testimonials"><img alt="PHILLIP AUSTIN" src="http://themes.pixelwars.org/cvcard-wp/wp-content/uploads/2014/04/testo-01.jpg">
                             <p></p>
-                            <h4>EMMANUEL OPIO<span>DEVELOPER / MINDVALLEY.</span></h4>
-                            <p>He is a great and hardworking guy. I am so proud of i have him as my asistant. He helped me so
-                                much. Also he is a great and hardworking guy. I am so proud of i have him as my asistant.
-                                He helped me so much.</p>
+                            <h4>{{testimony.name | uppercase}}<span>{{testimony.company | uppercase}}</span></h4>
+                            <p>{{testimony.testimony}}</p>
                         </div>
-                        <div class="testo"><img alt="GARY MORGAN" src="http://themes.pixelwars.org/cvcard-wp/wp-content/uploads/2014/04/testo-02.jpg">
-                            <p></p>
-                            <h4>GARY MORGAN <span>CHEMIST / FREELANCER</span></h4>
-                            <p>He was a great co-worker and a friend. I would’t be where i am without his support.</p>
-                        </div>
-                        <div class="testo"><img alt="JASON WILSON" src="http://themes.pixelwars.org/cvcard-wp/wp-content/uploads/2014/04/testo-03.jpg">
-                            <p></p>
-                            <h4>JASON WILSON <span>LAB GEEK / MIAMI METRO</span></h4>
-                            <p>He is ok.</p>
-                        </div>
+                
                     </div>
                     <h2 class="section-title"><span><i class="fa fa-file"></i>DOWNLOAD MY CV</span></h2>
                     <p>You can download my CV in pdf format if you like. I create usable web interfaces, front end coding stuff
@@ -105,7 +78,7 @@
                     <h2 class="section-title"><span><i class="fa fa-linkedin"></i>VIEW MY LINKEDIN PROFILE</span></h2>
                     <p>You can view my LinkedIn profile. I currently work for Pixelwars creative studio. I create usable web
                         interfaces, front end coding stuff and almost anything. But i love what i do.</p>
-                    <p><a class="button  primary  " href="https://www.linkedin.com/in/stephen-njau-855336ba/" target="_blank">MY LINKEDIN PROFILE</a></p>
+                    <p><a class="button  primary  " href="{{resume.linkedin}}" target="_blank">MY LINKEDIN PROFILE</a></p>
                 </div>
             </div>
         </div>

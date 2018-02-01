@@ -49,7 +49,7 @@ var personSchema = new mongoose.Schema(
 
         testimonials: [{
             name: { type: String, require: true },
-            compaany: { type: String, require: true },
+            company: { type: String, require: true },
             testimony: { type: String, require: true },
             _id: ObjectID
         }]

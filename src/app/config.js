@@ -18,7 +18,7 @@
                 // resume module
                 {
                     name: 'ResumeModule',
-                    files: ['app/components/resume/resume.controller.js']
+                    files: ['app/components/resume/resume.controller.js', 'app/components/resume/resume.service.js']
                 },
                 // portifolio module
                 {
