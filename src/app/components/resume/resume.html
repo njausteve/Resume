@@ -32,9 +32,9 @@
                     <div class="skillset">
                         
                             <div class="skill-unit" ng-repeat="skill in resume.devSkills">
-                                <h4>{{skill}}</h4>
-                                <div class="bar" data-percent="85">
-                                    <div class="progress" style="width: 100%;"></div>
+                                <h4>{{skill.skill}}</h4>
+                                <div class="bar" data-percent="">
+                                    <div class="progress" style="width: {{skill.level}}%;"></div>
                                 </div>
                             </div>     
                         

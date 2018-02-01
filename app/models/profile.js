@@ -31,10 +31,13 @@ var personSchema = new mongoose.Schema(
             _id: ObjectID
            }],
 
-        development_Skills: [{ type: String, require: true }],
+        development_Skills: [{ 
+            skill: {type: String, require: true },
+            level: {type : String}}    
+        ],
 
         design_Skills: [{ type: String, require: true }],
-
+ 
         education_History: [{
             year: { type: String, required: true },
             course: { type: String, require: true },
