@@ -26,7 +26,7 @@
                     files: ['app/components/portfolio/portfolio.controller.js', 'app/components/portfolio/portfolio.service.js']
                 },
 
-                //portifolio module 
+                //portifolio module
                 {
                     name: 'PortifolioDetailsModule',
                     files: ['app/components/portfolio/portfolio-detail.controller.js']
@@ -61,7 +61,7 @@
         // ocLazyLoad debuging mode true/false
         // set false or COMMENT this while building Production version
         $ocLazyLoadProvider.config({
-            debug: true
+            debug: false
         });
 
     }

@@ -22,7 +22,12 @@
   },
   "homepage": "https://github.com/njausteve/Resume#readme",
   "dependencies": {
+<<<<<<< HEAD
     "body-parser": "~1.18.2",
+=======
+    "body-parser": "~1.4.2",
+    "cors": "^2.8.4",
+>>>>>>> f6e138b... Added Profile data fetch from db + twiter fetch -> db -> end point
     "dotenv": "^4.0.0",
     "express": "~4.16.2",
     "express-validator": "^4.3.0",

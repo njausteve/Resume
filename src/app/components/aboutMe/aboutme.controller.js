@@ -15,43 +15,46 @@
 
     var vm = this;
 
-    var myInterests = ["human behaviour", "body language", 'personal development', 'Technology', 'Data Science', 'Disruptive Technology'];
-    vm.interest = myInterests[5];
-    
+    var myInterests = ['javascript'];
+    vm.interest = myInterests[0];
+
     vm.aboutme = {};
     vm.latestTweet = {};
-    
-    function fetchAboutMe(){
-          
-          return aboutMeService.getAboutMeData().
-
-          then(function (response) {
-
-                   console.log(response);
-
-              vm.latestTweet.full_text = response.full_text;
-
-              vm.latestTweet.datePosted = response.created_at;
-
-     
-          })
-          .catch(function (error) {
-
-              console.log(error);
-
-          });
 
 
-    }
 
-    fetchAboutMe();
+    (function fetchAboutMe() {
 
-    randomizeInterest();
+      return aboutMeService.getAboutMeData().
+
+        then(function (response) {
+
+          console.log(response);
+           
+           vm.latestTweet = response[0].latest_tweet;
+
+            
+             myInterests.push(...response[0].interests);
 
 
-    // randomizing the Interest Array
+          //  (function(){
+          //     for (var i = 0, l = response[0].interests.length; i < l; i++) {
+          //          myInterests.push(response[0].interests[i]);
+          //      }
+          //    }
+          //  )();
 
-    function randomizeInterest() {
+        })
+        .catch(function (error) {
+
+          console.log(error);
+
+        });
+
+
+    })();
+
+    (function randomizeInterest() {
 
       $interval(function () {
 
@@ -59,7 +62,8 @@
 
       }, 4500);
 
-    }
+    })();
+
   }
 
 })();

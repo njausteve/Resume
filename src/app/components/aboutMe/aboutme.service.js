@@ -27,6 +27,8 @@
         // Get data About me
         function _getAboutMeData() {
 
+            console.log("getAboutMeData hit");
+
             return $http.get(constants.apiHost + '/aboutMe')
                 .then(getAboutMeDataComplete)
                 .catch(getAboutMeDataFailed);

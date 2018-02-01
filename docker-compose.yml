@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  fullresume:
+    container_name: njausteve.com
+    image: njausteve/njausteve.com
+    restart: always
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 8088:8088
+    links: 
+      - database
+    volumes:
+      - ~/workspace/fullResume:/usr/src/app
+    env_file: 
+      - .env_file
+    depends_on:
+      - database        
+
+  database:
+     container_name: database
+     image: mongo
+     volumes:
+      - /data/mongodb:/data/db
+     ports:
+      - 27017:27017

@@ -1,7 +1,9 @@
+
 // app/routes.js
 var Project = require('./models/project'),
     project = new Project(),
-    getLatestTweet = require('./twitter'),
+    Profile = require('./models/profile'),
+    profile = new Profile(),
     feed = require('feed-read'),
     sendEmail = require('./email');
 
@@ -9,21 +11,16 @@ module.exports = function (app) {
 
     //server routes
 
-    //get aabout me data
+    //get about me data
     app.get('/api/aboutMe', function (req, res) {
-
-
-
-        //  write function to    1. get latest post id from db  -> fetch latest tweet from twitter -> 
-
-
-        //fetch  latest tweet from twitter
-        getLatestTweet.get('statuses/user_timeline', { user_id: 355697964, count: 2, tweet_mode: 'extended' }, function (err, data, response) {
-            console.log(data[0]);
+       
+        //fetch  latest tweet from db
+        Profile.find(function (err, profile) {
 
 
             if (err)
                 res.send(err);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -34,6 +31,10 @@ module.exports = function (app) {
 
             res.json(data[0]);
 
+=======
+            res.json(profile);
+               console.log(profile);
+>>>>>>> f6e138b... Added Profile data fetch from db + twiter fetch -> db -> end point
         });
 
 
@@ -86,7 +87,7 @@ module.exports = function (app) {
 
     });
 
-    // get all projects 
+    // get all projects
 
     app.get('/api/projects', function (req, res) {
 
@@ -103,7 +104,48 @@ module.exports = function (app) {
         });
 
 
+
+
     });
+
+
+    // post profile
+    app.post('/api/profile', function (req, res) {
+
+
+
+        console.log(req.body);
+
+        //res.json({ message: 'we are in profile' });
+
+        //validationErrors here
+
+
+        // var errors = req.validationErrors();
+        // if (errors) {
+        //     res.send(errors);
+        //     return;
+
+        // } else {
+
+        var reqObj = req.body;
+
+         for (var prop in reqObj) {
+
+          profile[prop] = reqObj[prop];
+
+        }
+
+        profile.save(function (err) {
+           if (err)
+                res.send(err);
+
+            res.json({ message: 'profile created!' });
+        });
+
+        //}
+    });
+
 
 
     // post projects
@@ -139,7 +181,7 @@ module.exports = function (app) {
         }
     });
 
-    // send email API 
+    // send email API
 
     app.post('/api/sendmail', function (req, res) {
 
@@ -175,9 +217,9 @@ module.exports = function (app) {
 
             });
 
+        
+
         }
-
-
 
     });
 
@@ -186,7 +228,14 @@ module.exports = function (app) {
 
     app.get('*', function (req, res) {
 
+
         res.sendfile('./_build/'); // load the single view file (angular will handle the page changes on the front-end)
     });
 
 };
+
+
+// { created_at: 'Sat Jan 06 23:27:08 +0000 2018',
+// id: 949784428712259600,
+// id_str: '949784428712259585',
+// full_text: 'From knot to 88 inches of 8k resolution. It was just in 2012 that the first 4k was released, one can\'t stop to think of how endless possibilities in tech are. #CES2018 #CES #technology #Electronics #future #pixels https://t.co/3nwHvAkij0',

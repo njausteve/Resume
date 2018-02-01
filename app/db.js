@@ -1,7 +1,7 @@
 
 var mongoose = require('mongoose'),
 //  production
-     //  dbURI = 'mongodb://database:27017/test'; 
+    //  dbURI = 'mongodb://database:27017/test'; 
 
     //  dev 
     
@@ -23,11 +23,11 @@ var mongoose = require('mongoose'),
    mongoose.connection.on("disconnected", function(){
      console.log('Mongoose default connection disconnected'); 
    });
-   
+      
    process.on('SIGINIT', function(){
-            mongoose.connection.close(function(){
+            mongoose.connection.close(function(err){
                   console.log('mongoose default connection disconnected through app termination');
-                  process.exit(0);
+                  process.exit(err ? 1 : 0);
             });
    });
   

@@ -1,32 +1,36 @@
-//server.js
+//  server.js
 
 // modules =======
 
 var express = require('express'),
   app = express(),
   bodyParser = require('body-parser'),
-  validator = require('express-validator'),
+  cors = require('cors'),
   morgan = require('morgan'),
+  middleware = require('./app/middleware'),
   methodOverride = require('method-override');
 
 
-//load environment variables
+//  load environment variables
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').load();
 }
 
 
-console.log(process.env.NODE_ENV );
-//configuration =================================
+console.log(process.env);
+//  configuration =================================
 
 // URLS AND VARIABLES =======================
 var port = process.env.PORT || 8088;
 
+//  app.use(middleware.validatePost);
+
+app.use(cors());
 // add logging
 app.use(morgan('dev'));
 
-//parse  application/json
+//  parse  application/json
 
 app.use(bodyParser.json());
 
@@ -38,31 +42,15 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//overide with the X-HTTP-method-overide header in the request (simulate delete/ put)
+//  overide with the X-HTTP-method-overide header in the request (simulate delete/ put)
 app.use(methodOverride('X-HTTP-Method-Override'));
 
-//add validation middleware
+//  add validation middleware
 
-app.use(validator({
+//  app.use(middleware.validatePost);
+app.use('/api/aboutMe', middleware.fetchLatestTweet);
 
-  customValidators: {
-    categoryValidator: function (input) {
-
-      console.log(input);
-
-
-      if (input === "coding" || input === "design" || input === "logo") {
-
-        return true;
-      } else {
-
-        return false;
-      }
-    }
-  }
-}));
-
-//set the  static file location /src
+//  set the  static file location /src
 app.use(express.static(__dirname + '/_build'));
 
 //routes ==========
@@ -72,11 +60,12 @@ require('./app/routes')(app);
 //db connection
 require('./app/db')(app);
 
-// start the app 
+
+// start the app
 
 app.listen(port);
 
-// log the user 
+// log the user
 
 console.log("Magic Happens on port " + port);
 

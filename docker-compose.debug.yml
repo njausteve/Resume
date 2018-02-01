@@ -1,0 +1,12 @@
+version: '2.1'
+
+services:
+  fullresume:
+    image: fullresume
+    build: .
+    environment:
+      NODE_ENV: development
+    ports:
+      - 8088:8088
+      - 9229:9229
+    command: node --inspect=0.0.0.0:9229 server.js

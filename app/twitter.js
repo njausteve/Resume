@@ -1,5 +1,7 @@
 var Twit = require('twit');
-
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').load();
+}
 
 var tweet = new Twit({
     consumer_key:  process.env.TWITTER_CONSUMER_KEY,

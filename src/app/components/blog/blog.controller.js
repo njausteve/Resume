@@ -43,7 +43,20 @@
                   
                   vm.posts = response;
 
-               console.log(response);   
+              var content = response[0].content;
+
+              console.log(response); 
+               
+              console.log( angular.element(content).text());
+               
+            //   getImageUrl(content);
+                  
+            //   function getImageUrl(content) {
+             
+            //     var res = content.match(/src="(https?\:\/\/[^"]+)"/g);
+                
+            //     console.log("Banner image url : ", res );
+            // }
 
             })
             .catch( function(error){

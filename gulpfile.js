@@ -95,7 +95,7 @@ gulp.task('sass', function () {
         .pipe(sass())
         .on('error', notify.onError({
             title: 'SASS Failed',
-            message: `Error(s) occurred during compile! :`
+            message: `Error(s) occurred during compile! : <%= error.message %>`
         }))
 
         .pipe(autoprefixer(autoprefixerOptions))

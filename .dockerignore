@@ -1,0 +1,14 @@
+node_modules
+npm-debug.log
+.DS_Store
+.bowerrc
+.dockerignore
+.git
+.env
+.gitignore
+Dockerfile
+README.md
+docker-compose.yml
+gulpfile.js
+package-lock.json
+src
