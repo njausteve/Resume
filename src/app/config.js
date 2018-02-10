@@ -52,8 +52,13 @@
                     name: 'ContactModule',
                     files: ['app/components/contact/contact.controller.js', 'app/components/contact/contact.service.js', {
                         type: 'js',
+<<<<<<< HEAD
                         path: 'http://maps.google.com/maps/api/js?key=AIzaSyD34UntJEPJVv0Kix-CjL0PfpUF5I3Jf7Q'
                     }, 'assests/lib/ng-map.min.js']
+=======
+                        path: 'http://maps.google.com/maps/api/js?key=AIzaSyAGcb_rYSDpKnLE7-rIe8t-d15x7Tl1mdQ'
+                    }, 'app/externalModules/ng-map.min.js']
+>>>>>>> 0ef327a... added new structure to navbar
                 }
             ]
         });

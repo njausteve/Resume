@@ -7,6 +7,7 @@ var express = require('express'),
   bodyParser = require('body-parser'),
   cors = require('cors'),
   morgan = require('morgan'),
+  expressValidator = require('express-validator'),
   middleware = require('./app/middleware'),
   methodOverride = require('method-override');
 
@@ -46,6 +47,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override'));
 
 //  add validation middleware
+app.use(expressValidator());
 
 //  app.use(middleware.validatePost);
 app.use('/api/aboutMe', middleware.fetchLatestTweet);

@@ -13,11 +13,9 @@ module.exports = function (app) {
 
     //get about me data
     app.get('/api/aboutMe', function (req, res) {
-       
+
         //fetch  latest tweet from db
         Profile.find(function (err, profile) {
-
-
             if (err)
                 res.send(err);
 <<<<<<< HEAD
@@ -33,8 +31,11 @@ module.exports = function (app) {
 
 =======
             res.json(profile);
+<<<<<<< HEAD
                console.log(profile);
 >>>>>>> f6e138b... Added Profile data fetch from db + twiter fetch -> db -> end point
+=======
+>>>>>>> 0ef327a... added new structure to navbar
         });
 
 
@@ -217,7 +218,7 @@ module.exports = function (app) {
 
             });
 
-        
+
 
         }
 
@@ -233,9 +234,3 @@ module.exports = function (app) {
     });
 
 };
-
-
-// { created_at: 'Sat Jan 06 23:27:08 +0000 2018',
-// id: 949784428712259600,
-// id_str: '949784428712259585',
-// full_text: 'From knot to 88 inches of 8k resolution. It was just in 2012 that the first 4k was released, one can\'t stop to think of how endless possibilities in tech are. #CES2018 #CES #technology #Electronics #future #pixels https://t.co/3nwHvAkij0',

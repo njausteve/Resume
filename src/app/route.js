@@ -78,6 +78,11 @@
                                 }
                         })
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0ef327a... added new structure to navbar
                         .state('blog', {
 
                                 url: '/blog',

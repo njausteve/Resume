@@ -1,100 +1,118 @@
-
 var validator = require('express-validator'),
-  Person = require('./models/profile'),
-  person = new Person(),
-  getLatestTweet = require('./twitter');
+    Person = require('./models/profile'),
+    person = new Person(),
+    getLatestTweet = require('./twitter');
 
 if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').load();
+    require('dotenv').load();
 }
 
 module.exports = {
-  validatePost: function (req, res, next) {
+    validatePost: function(req, res, next) {
 
-    validator({
+        validator({
 
-      customValidators: {
-        categoryValidator: function (input) {
+            customValidators: {
+                categoryValidator: function(input) {
 
-          console.log(input);
+                    console.log(input);
 
 
-          if (input === 'coding' || input === 'design' || input === 'logo') {
-            return true;
-          } else {
+                    if (input === 'coding' || input === 'design' || input === 'logo') {
+                        return true;
+                    } else {
 
-            return false;
-          }
-        }
-      }
-    });
+                        return false;
+                    }
+                }
+            }
+        });
 
-    next();
+        next();
 
-  },
-  fetchLatestTweet: function (req, res, next) {
+    },
+    fetchLatestTweet: function(req, res, next) {
 
-    console.log("A request for things received");
+        console.log("A request for things received");
 
-    // get latest tweet
-    getLatestTweet.get('statuses/user_timeline', { user_id: 355697964, count: 2, tweet_mode: 'extended' }, function (err, data, response) {
-      console.log(data[0]);
-      if (err)
-        console.log(err);
+        // get latest tweet
+        getLatestTweet.get('statuses/user_timeline', {
+            user_id: 355697964,
+            count: 2,
+            tweet_mode: 'extended'
+        }, function(err, data, response) {
+            console.log("tweet data:", data[0]);
+            if (err) {
+                console.log(err);
 
-      //extract id, date and text from tweet response 
+            } else {
 
-      var latestTweet = {
+                if (data[0] !== undefined) {
 
-        tweet_id: data[0].id_str,
-        tweet: data[0].full_text,
-        tweet_date: data[0].created_at
-      };
+                    //extract id, date and text from tweet response 
 
-      console.log(latestTweet);
+                    var latestTweet = {
 
-      //check db for latest tweet id
+                        tweet_id: data[0].id_str,
+                        tweet: data[0].full_text,
+                        tweet_date: data[0].created_at
+                    };
 
-      Person.find({}, { 'latest_tweet': 1, '_id': 0 }, function (err, profile) {
+                    //check db for latest tweet id
 
-        var latestTweetIdFromDb = profile[0].latest_tweet.tweet_id,
-          latestTweetFromDb = profile[0].latest_tweet;
+                    Person.find({}, {
+                        'latest_tweet': 1,
+                        '_id': 0
+                    }, function(err, profile) {
 
-        // Handle any possible database errors
-        if (err) {
-          console.log(err);
+                        var latestTweetIdFromDb = profile[0].latest_tweet.tweet_id,
+                            latestTweetFromDb = profile[0].latest_tweet;
 
-        } else {
+                        // Handle any possible database errors
+                        if (err) {
+                            console.log(err);
 
-          //update db
+                        } else {
 
-          if (latestTweet.tweet_id !== latestTweetIdFromDb) {
+                            //update db
 
-            console.log("update db");
+                            if (latestTweet.tweet_id !== latestTweetIdFromDb) {
 
-            Person.update({},
-              { $set: { "latest_tweet": latestTweet } },
+                                console.log("update db");
 
-              function (err, newprofile) {
+                                Person.update({}, {
+                                        $set: {
+                                            "latest_tweet": latestTweet
+                                        }
+                                    },
 
-                if (err)
-                  console.log(err);
+                                    function(err, newprofile) {
 
-               console.log("tweet updated");   
+                                        if (err)
+                                            console.log(err);
 
-              }
+                                        console.log("tweet updated");
 
-            );
+                                    }
 
-          }
+                                );
 
-        }
-      });
+                            }
 
-    });
+                        }
+                    });
 
-    next();
+                }
 
-  }
+            }
+
+
+
+
+        });
+
+        next();
+
+    }
 
 };
