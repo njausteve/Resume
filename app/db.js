@@ -1,10 +1,10 @@
 var mongoose = require('mongoose'),
   //  production
-  dbURI = 'mongodb://database:27017/test';
+  // dbURI = 'mongodb://database:27017/test';
 
 //  dev
 
-// dbURI = 'mongodb://localhost/test';
+dbURI = 'mongodb://localhost/test';
 
 
 

@@ -18,24 +18,11 @@ module.exports = function (app) {
         Profile.find(function (err, profile) {
             if (err)
                 res.send(err);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-            res.json(data[0]);
-=======
-=======
->>>>>>> 277a7c8... added Medium fetch API endpoint
-
-            res.json(data[0]);
-
-=======
             res.json(profile);
-<<<<<<< HEAD
+
                console.log(profile);
->>>>>>> f6e138b... Added Profile data fetch from db + twiter fetch -> db -> end point
-=======
->>>>>>> 0ef327a... added new structure to navbar
+
         });
 
 
@@ -58,10 +45,6 @@ module.exports = function (app) {
 
             console.log(articles);
 
-<<<<<<< HEAD
->>>>>>> 277a7c8... added Medium fetch API endpoint
-=======
->>>>>>> 277a7c8... added Medium fetch API endpoint
 
         });
     });

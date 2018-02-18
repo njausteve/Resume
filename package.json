@@ -22,23 +22,14 @@
   },
   "homepage": "https://github.com/njausteve/Resume#readme",
   "dependencies": {
-<<<<<<< HEAD
-    "body-parser": "~1.18.2",
-=======
     "body-parser": "~1.4.2",
     "cors": "^2.8.4",
->>>>>>> f6e138b... Added Profile data fetch from db + twiter fetch -> db -> end point
     "dotenv": "^4.0.0",
     "express": "~4.16.2",
     "express-validator": "^4.3.0",
     "feed-read": "0.0.1",
-<<<<<<< HEAD
-    "method-override": "~2.3.10",
-    "mongoose": "^5.0.0-rc0",
-=======
     "method-override": "~2.0.2",
     "mongoose": "^4.4.20",
->>>>>>> e7723b2... added docker assets
     "mongoose-timestamp": "^0.6.0",
     "morgan": "^1.9.0",
     "nodemailer": "^4.4.1",
