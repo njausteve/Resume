@@ -7,7 +7,7 @@
 
       // API endpoint
       // apiHost: 'rest/',
-      apiHost: 'http://10.138.168.144:8088/api'
+      apiHost: 'http://localhost:8088/api'
 
 
     });

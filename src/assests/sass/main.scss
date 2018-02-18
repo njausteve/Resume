@@ -165,35 +165,32 @@ p {
             .current-nav {
                 left      : 0;
                 visibility: visible;
-                outline   : 1px solid red;
-
-                a {
-                    color: #fff !important;
-                }
+                transition: all ease-in 1s;
             }
 
             .right-nav {
                 left      : 100%;
                 visibility: visible;
-                outline   : 1px solid white;
+                transition: all ease-in 1s;
             }
 
             .left-nav {
-                /*transition                 : all linear 3s; */
+                transition: all ease-in 1s;
                 visibility: visible;
                 left      : -100%;
-                outline   : 1px solid black;
             }
-            /*  .right-nav-outer {
+
+            .right-nav-outer {
                 left      : 140%;
-                transition: all linear 3s;
+                transition: all linear 1s;
+                visibility: hidden;
             }
 
             .left-nav-outer {
+                visibility: hidden;
                 left      : -240%;
                 transition: all linear 3s;
             }
-            */
         }
     }
 }
@@ -1678,15 +1675,6 @@ p {
         }
     }
 }
-// page animation
-// .ng-enter {
-//     animation: slideInRight 0.5s both ease-out;
-//     z-index: 88888;
-// }
-// .ng-leave {
-//     animation: slideInRight 0.5s both ease-out;
-//     z-index: 9999;
-// } // rotate In and out animations
 @keyframes rotateOutWord {
     0% {
         opacity  : 1;
@@ -1709,44 +1697,53 @@ p {
         transform: translateY(0px);
     }
 }
-@keyframes slideNavRight {
-    to {
-        transform: translateX(96%);
-    }
-}
-@keyframes slideNavLeft {
-    to {
-        left: 100%;
-    }
-}
-@-webkit-keyframes fadeOutLeft {
-    0% {
-        opacity: 1;
+@keyframes fadeInLeft {
+    from {
+        opacity          : 0;
+        -webkit-transform: translate3d(-90%, 0, 0);
+        transform        : translate3d(-90%, 0, 0);
     }
 
-    100% {
-        opacity          : 0;
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform        : translate3d(-100%, 0, 0);
+    to {
+        opacity          : 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform        : translate3d(0, 0, 0);
     }
 }
 @keyframes fadeOutLeft {
-    0% {
+    from {
         opacity: 1;
     }
 
-    100% {
+    to {
         opacity          : 0;
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform        : translate3d(-100%, 0, 0);
+        -webkit-transform: translate3d(-90%, 0, 0);
+        transform        : translate3d(-90%, 0, 0);
     }
 }
+@keyframes fadeInRight {
+    from {
+        opacity          : 0;
+        -webkit-transform: translate3d(90%, 0, 0);
+        transform        : translate3d(90%, 0, 0);
+    }
 
-.move0-left {
-    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-    transition        : transform 4s, opacity 0.5s;
-    -webkit-transform : translate3d(-100%, 0, 0);
-    transform         : translate3d(-100%, 0, 0);
+    to {
+        opacity          : 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform        : translate3d(0, 0, 0);
+    }
+}
+@keyframes fadeOutRight {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity          : 0;
+        -webkit-transform: translate3d(90%, 0, 0);
+        transform        : translate3d(90%, 0, 0);
+    }
 }
 // notifications ngNotify custom to override default styles for ngNotify
 
@@ -1760,4 +1757,78 @@ p {
 
 .send-button {
     color: #0078CA;
+}
+/*=======================  page styling          =======================*/
+// .page-blog {
+//     background-color: green;
+// }
+//
+// .page-about {
+//     background-color: yellow !important;
+// }
+//
+// .page-contact {
+//     background-color: purple;
+// }
+//
+// .page-portifolio {
+//     background-color: cyan;
+// }
+//
+// .page-resume {
+//     background-color: orange;
+// }
+
+.move-right {
+    animation: fadeInRight 1s both ease-in;
+}
+
+.move-left {
+    animation: fadeInLeft 1s both ease-in;
+}
+/* =============== page-navigatio right ------------------------ */
+.page-about,
+.page-blog,
+.page-contact,
+.page-portifolio,
+.page-resume {
+    &.view-animate {
+        &.move-right {
+            &.ng-leave {
+                animation: fadeOutLeft 1s both ease-out;
+            }
+
+            &.ng-enter {
+                animation: fadeInRight 1s both ease-in;
+            }
+        }
+    }
+}
+/* =============== page-navigatio left ------------------------ */
+.page-about,
+.page-blog,
+.page-contact,
+.page-portifolio,
+.page-resume {
+    &.view-animate,
+    .move-left {
+        &.ng-leave {
+            animation: fadeOutRight 1s both ease-in;
+        }
+
+        &.ng-enter {
+            animation: fadeInLeft 1s both ease-in;
+        }
+    }
+}
+
+.view-container {
+    position: relative;
+}
+
+.view-animate {
+    position  : absolute;
+    text-align: center;
+    top       : 0;
+    width     : 100%;
 }

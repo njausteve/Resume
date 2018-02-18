@@ -3,7 +3,7 @@
  *  Resume
  * by Stephen njau(njaustevedomino@gmail.com)
  */
-(function () {
+(function() {
   'use strict';
 
   angular
@@ -27,25 +27,19 @@
 
       return aboutMeService.getAboutMeData().
 
-        then(function (response) {
+      then(function(response) {
 
           console.log(response);
-           
-           vm.latestTweet = response[0].latest_tweet;
 
-            
-             myInterests.push(...response[0].interests);
+          vm.latestTweet = response[0].latest_tweet;
 
 
-          //  (function(){
-          //     for (var i = 0, l = response[0].interests.length; i < l; i++) {
-          //          myInterests.push(response[0].interests[i]);
-          //      }
-          //    }
-          //  )();
+          response[0].interests.forEach(function(item) {
+            myInterests.push(item)
+          })
 
         })
-        .catch(function (error) {
+        .catch(function(error) {
 
           console.log(error);
 
@@ -56,7 +50,7 @@
 
     (function randomizeInterest() {
 
-      $interval(function () {
+      $interval(function() {
 
         vm.interest = myInterests[Math.floor(Math.random() * myInterests.length)];
 

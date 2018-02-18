@@ -6,12 +6,11 @@
         </h2>
         <!-- end .section-title -->
 
-        <div class="latest-posts row"  >
+        <div class="latest-posts row">
             <div class="col-xs-12 col-sm-6 col-md-4 center" ng-repeat="post in blog.posts | limitTo:blog.quantity">
-                <article  class="media-cell">
+                <article class="media-cell">
                     <div class="media-box">
-                        <img  src="http://themes.pixelwars.org/cvcard-wp/wp-content/uploads/2014/04/lee-720x540.png" class="post_image"
-                            alt="{{post.title}}" title="">
+                        <img src="http://themes.pixelwars.org/cvcard-wp/wp-content/uploads/2014/04/lee-720x540.png" class="post_image" alt="{{post.title}}" title="">
                         <div class="mask"> </div>
                         <a href="http://themes.pixelwars.org/cvcard-wp/tips-for-better-character-sketching/"></a>
                     </div>
@@ -19,7 +18,7 @@
 
                     <header class="media-cell-desc">
                         <span title="2014" class="date">
-                            <span class="day">{{ post.published| date :  "dd" }}</span> {{ post.published| date :  "MMM" }} </span>
+                            <span class="day">{{ post.published| date :  "dd" }}</span> {{ post.published| date : "MMM" }} </span>
                         <!-- end .date -->
                         <h3>
                             <a href="{{post.link}}" target="_blank" >{{post.title}}</a>
@@ -30,7 +29,7 @@
                 <!-- end .media-cell -->
 
             </div>
-    
+
         </div>
         <!-- end .latest-posts -->
 
@@ -44,4 +43,3 @@
     </div>
     <!-- end .content -->
 </section>
-

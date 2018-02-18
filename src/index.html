@@ -8,7 +8,8 @@
         <!-- Chrome, Firefox OS and Opera -->
         <meta name="theme-color" content="#02468D">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="#02468d">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
         <meta name="author" />
 
         <!-- CSS -->
@@ -37,10 +38,10 @@
                     <h1>Stephen njau</h1>
                     <p>Front-End / Javascript developer</p>
                     <div class="nav-container">
-                        <ul id="nav" class="navigate">
+                        <ul id="nav">
 
                             <!-- TODO: move-left define in css -->
-                            <li ng-repeat="pageName in main.pageNames track by $index" ng-if="pageName !=='detail'" ng-class="{ 'move-left': main.moveLeft, 'current-nav' : pageName == $state.current.name, 'right-nav': $index == main.navRight, 'right-nav-outer': $index == main.navRightOuter, 'left-nav': $index == main.navleft, 'left-nav-outer': main.pageNames.indexOf($state.current.name)-2 == $index }"
+                            <li class="navigate" ng-repeat="pageName in main.pageNames track by $index" ng-if="pageName !=='detail'" ng-class="{ 'move-left': moveLeft, 'move-right': moveRight, 'current-nav' : pageName == $state.current.name, 'right-nav': $index == main.navRight, 'right-nav-outer': $index == main.navRightOuter, 'left-nav': $index == main.navleft, 'left-nav-outer': main.pageNames.indexOf($state.current.name)-2 == $index }"
                               ng-cloak>
                                 <a ng-click="main.nextPage($index)">{{pageName}}</a>
                             </li>
@@ -50,6 +51,7 @@
 
                 </div>
             </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
         </div>
     </header>
@@ -65,9 +67,21 @@
 <script type="text/javascript" src="./assests/lib/loading-bar.min.js"></script>
 <script type="text/javascript" src="./assests/lib/ng-notify.min.js"></script>
 =======
+=======
+
+>>>>>>> 8fdd1a8... Added ui-view animations
         </header>
+
         <!--endof: header-->
-        <div ui-view></div>
+        <div class="view-container">
+
+            <div class="view-animate  view  page-{{$state.current.name}} " ng-class="{'move-left': moveLeft, 'move-right': moveRight}" ui-view>
+
+            </div>
+        </div>
+
+
+
     </body>
     <!-- Angular libraries for application -->
     <!-- build:angularlibs assests/js/angularlibs.min.js -->

@@ -24,7 +24,8 @@
     vm.navleft = 1;
     vm.navRightOuter = vm.navRight + 1;
     vm.navleftOuter = vm.navleft - 1;
-    vm.moveLeft, vm.moveRight = 0;
+    vm.test = "minion";
+    $rootScope.moveLeft, $rootScope.moveRight = 0;
 
 
     //get states and remove the detail state
@@ -48,13 +49,33 @@
       var previousStateIndex = vm.pageNames.indexOf($state.current.name);
       console.log(" the previousStateIndex : " + previousStateIndex + "  => \n the next state is : " + nextStateIndex);
 
-      if (previousStateIndex > nextStateIndex) {
+      if (nextStateIndex == 0 && previousStateIndex == vm.pageNames.length - 1) {
 
-        vm.moveLeft = 1;
+        $rootScope.moveRight = 1
+        $rootScope.moveLeft = 0;
+        console.log("RIGHT");
 
+      } else if (previousStateIndex == 0 && nextStateIndex == vm.pageNames.length - 1) {
+
+        $rootScope.moveRight = 0;
+        $rootScope.moveLeft = 1;
+        console.log('LEFT');
+
+      } else if (nextStateIndex > previousStateIndex) {
+
+        $rootScope.moveRight = 1
+        $rootScope.moveLeft = 0;
+        console.log("RIGHT");
+
+      } else {
+
+        $rootScope.moveRight = 0;
+        $rootScope.moveLeft = 1;
         console.log('LEFT');
 
       }
+
+      // TODO: refactor this logic
 
       vm.navRight = nextStateIndex + 1;
       vm.navleft = nextStateIndex - 1;
@@ -81,6 +102,7 @@
         case 4:
           vm.navRight = 0;
           vm.navleftOuter = vm.navleft - 1;
+
           break;
       }
 
@@ -92,6 +114,8 @@
       console.log('ONL', vm.navleftOuter);
 
       $state.go(vm.pageNames[nextStateIndex]);
+
+
 
     };
 

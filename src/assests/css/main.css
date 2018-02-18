@@ -94,17 +94,7 @@ p {
       margin: 0.9em auto 0;
       padding: 0;
       list-style: none;
-      line-height: 1.8;
-      /*  .right-nav-outer {
-                left      : 140%;
-                transition: all linear 3s;
-            }
-
-            .left-nav-outer {
-                left      : -240%;
-                transition: all linear 3s;
-            }
-            */ }
+      line-height: 1.8; }
       @media screen and (max-width: 767px) {
         .head .nav-container #nav {
           height: 40px; } }
@@ -138,18 +128,28 @@ p {
       .head .nav-container #nav .current-nav {
         left: 0;
         visibility: visible;
-        outline: 1px solid red; }
-        .head .nav-container #nav .current-nav a {
-          color: #fff !important; }
+        -webkit-transition: all ease-in 1s;
+        transition: all ease-in 1s; }
       .head .nav-container #nav .right-nav {
         left: 100%;
         visibility: visible;
-        outline: 1px solid white; }
+        -webkit-transition: all ease-in 1s;
+        transition: all ease-in 1s; }
       .head .nav-container #nav .left-nav {
-        /*transition                 : all linear 3s; */
+        -webkit-transition: all ease-in 1s;
+        transition: all ease-in 1s;
         visibility: visible;
-        left: -100%;
-        outline: 1px solid black; }
+        left: -100%; }
+      .head .nav-container #nav .right-nav-outer {
+        left: 140%;
+        -webkit-transition: all linear 1s;
+        transition: all linear 1s;
+        visibility: hidden; }
+      .head .nav-container #nav .left-nav-outer {
+        visibility: hidden;
+        left: -240%;
+        -webkit-transition: all linear 3s;
+        transition: all linear 3s; }
 
 #about-me .intro h2 {
   font-family: 'Lato';
@@ -1318,48 +1318,77 @@ p {
     -webkit-transform: translateY(0px);
             transform: translateY(0px); } }
 
-@-webkit-keyframes slideNavRight {
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-90%, 0, 0);
+    transform: translate3d(-90%, 0, 0); }
   to {
-    -webkit-transform: translateX(96%);
-            transform: translateX(96%); } }
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
 
-@keyframes slideNavRight {
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-90%, 0, 0);
+    transform: translate3d(-90%, 0, 0); }
   to {
-    -webkit-transform: translateX(96%);
-            transform: translateX(96%); } }
-
-@-webkit-keyframes slideNavLeft {
-  to {
-    left: 100%; } }
-
-@keyframes slideNavLeft {
-  to {
-    left: 100%; } }
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
 
 @-webkit-keyframes fadeOutLeft {
-  0% {
+  from {
     opacity: 1; }
-  100% {
+  to {
     opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0); } }
+    -webkit-transform: translate3d(-90%, 0, 0);
+    transform: translate3d(-90%, 0, 0); } }
 
 @keyframes fadeOutLeft {
-  0% {
+  from {
     opacity: 1; }
-  100% {
+  to {
     opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0); } }
+    -webkit-transform: translate3d(-90%, 0, 0);
+    transform: translate3d(-90%, 0, 0); } }
 
-.move0-left {
-  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-  -webkit-transition: opacity 0.5s, -webkit-transform 4s;
-  transition: opacity 0.5s, -webkit-transform 4s;
-  transition: transform 4s, opacity 0.5s;
-  transition: transform 4s, opacity 0.5s, -webkit-transform 4s;
-  -webkit-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0); }
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(90%, 0, 0);
+    transform: translate3d(90%, 0, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(90%, 0, 0);
+    transform: translate3d(90%, 0, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+
+@-webkit-keyframes fadeOutRight {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(90%, 0, 0);
+    transform: translate3d(90%, 0, 0); } }
+
+@keyframes fadeOutRight {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(90%, 0, 0);
+    transform: translate3d(90%, 0, 0); } }
 
 .ngn-success {
   background-color: #f3be27f0 !important; }
@@ -1369,5 +1398,67 @@ p {
 
 .send-button {
   color: #0078CA; }
+
+/*=======================  page styling          =======================*/
+.move-right {
+  -webkit-animation: fadeInRight 1s both ease-in;
+          animation: fadeInRight 1s both ease-in; }
+
+.move-left {
+  -webkit-animation: fadeInLeft 1s both ease-in;
+          animation: fadeInLeft 1s both ease-in; }
+
+/* =============== page-navigatio right ------------------------ */
+.page-about.view-animate.move-right.ng-leave,
+.page-blog.view-animate.move-right.ng-leave,
+.page-contact.view-animate.move-right.ng-leave,
+.page-portifolio.view-animate.move-right.ng-leave,
+.page-resume.view-animate.move-right.ng-leave {
+  -webkit-animation: fadeOutLeft 1s both ease-out;
+          animation: fadeOutLeft 1s both ease-out; }
+
+.page-about.view-animate.move-right.ng-enter,
+.page-blog.view-animate.move-right.ng-enter,
+.page-contact.view-animate.move-right.ng-enter,
+.page-portifolio.view-animate.move-right.ng-enter,
+.page-resume.view-animate.move-right.ng-enter {
+  -webkit-animation: fadeInRight 1s both ease-in;
+          animation: fadeInRight 1s both ease-in; }
+
+/* =============== page-navigatio left ------------------------ */
+.page-about.view-animate.ng-leave,
+.page-about .move-left.ng-leave,
+.page-blog.view-animate.ng-leave,
+.page-blog .move-left.ng-leave,
+.page-contact.view-animate.ng-leave,
+.page-contact .move-left.ng-leave,
+.page-portifolio.view-animate.ng-leave,
+.page-portifolio .move-left.ng-leave,
+.page-resume.view-animate.ng-leave,
+.page-resume .move-left.ng-leave {
+  -webkit-animation: fadeOutRight 1s both ease-in;
+          animation: fadeOutRight 1s both ease-in; }
+
+.page-about.view-animate.ng-enter,
+.page-about .move-left.ng-enter,
+.page-blog.view-animate.ng-enter,
+.page-blog .move-left.ng-enter,
+.page-contact.view-animate.ng-enter,
+.page-contact .move-left.ng-enter,
+.page-portifolio.view-animate.ng-enter,
+.page-portifolio .move-left.ng-enter,
+.page-resume.view-animate.ng-enter,
+.page-resume .move-left.ng-enter {
+  -webkit-animation: fadeInLeft 1s both ease-in;
+          animation: fadeInLeft 1s both ease-in; }
+
+.view-container {
+  position: relative; }
+
+.view-animate {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%; }
 
 /*# sourceMappingURL=main.css.map */
