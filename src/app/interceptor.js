@@ -12,11 +12,14 @@
     .factory('httpInterceptor', httpInterceptor);
 
   /** @ngInject */
-  function httpInterceptor($q, $injector) {
+  function httpInterceptor($q, $injector, $state, $rootScope) {
     return {
 
+
+
       request: function(config) {
-        // console.log(config);
+
+        console.log("request config", config);
         // Contains the data about the request before it is sent.
 
         // Return the config or wrap it in a promise if blank.
@@ -25,7 +28,7 @@
 
       // On request failure
       requestError: function(rejection) {
-        console.log('request rejection', rejection);
+        console.log('requestError', rejection);
         // Contains the data about the error on the request.
 
         // Return the promise rejection.
@@ -46,12 +49,15 @@
 
         var rejectedAPI = rejection.config.url.split("/");
 
-        console.log("rejectedAPI", rejection);
+        console.log("responseError", rejection);
         switch (rejection.status) {
 
-          // turning off for testing puurpose
+          // turning off for testing purpose
           // case 404:
-          case 500:
+          case 404:
+
+            //$rootScope.flags.errorCode = 404;
+
             $injector.get("$state").go('error', {
               'errorData': rejection
             });

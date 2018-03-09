@@ -3,6 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
+        <base href="/">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <!-- Chrome, Firefox OS and Opera -->
@@ -31,9 +32,9 @@
     <body ng-app="njausteve" class="ng-cloak view">
         <!-- header section-->
 
-        <header class="head text-center" ng-controller="mainController as main" ng-hide="$state.current.name == 'detail'">
+        <header class="head text-center" ng-controller="mainController as main" ng-hide="$state.current.name == 'detail' || $state.current.name == 'error' ">
             <div class="no-padding">
-                <div class="container" style="height: auto;">
+                <div class="container-fluid" style="height: auto;">
                     <img src="/assests/images/man.svg" height="160" width="200" alt="profile pic">
                     <h1>Stephen njau</h1>
                     <p>Front-End / Javascript developer</p>
@@ -41,8 +42,10 @@
                         <ul id="nav">
 
                             <!-- TODO: move-left define in css -->
-                            <li class="navigate" ng-repeat="pageName in main.pageNames track by $index" ng-if="pageName !=='detail'" ng-class="{ 'move-left': moveLeft, 'move-right': moveRight, 'current-nav' : pageName == $state.current.name, 'right-nav': $index == main.navRight, 'right-nav-outer': $index == main.navRightOuter, 'left-nav': $index == main.navleft, 'left-nav-outer': main.pageNames.indexOf($state.current.name)-2 == $index }"
-                              ng-cloak>
+                            <!-- <li class="navigate" ng-repeat="pageName in main.pageNames track by $index" ng-if="pageName !=='detail'" ng-class="{ 'move-left': moveLeft, 'move-right': moveRight, 'current-nav' : pageName == $state.current.name, 'right-nav': $index == main.navRight, 'right-nav-outer': $index == main.navRightOuter, 'left-nav': $index == main.navleft, 'left-nav-outer': main.pageNames.indexOf($state.current.name)-2 == $index }" -->
+                                <li class="navigate" ng-repeat="pageName in main.pageNames track by $index" ng-if="pageName !=='detail'" ng-class="{   'move-left': moveLeft, 'move-right': moveRight, 'current-nav' : pageName == $state.current.name, 'right-nav': $index == main.navRight, 'left-nav': $index == main.navleft,  'right-nav-outer': $index == main.navRightOuter, 'left-nav-outer': main.pageNames.indexOf($state.current.name)-2 == $index }"
+                            
+                                ng-cloak>
                                 <a ng-click="main.nextPage($index)">{{pageName}}</a>
                             </li>
 
@@ -55,8 +58,8 @@
         </header>
         <!--endof: header-->
         <div class="view-container">
-
-            <div class="view-animate  view  page-{{$state.current.name}} " ng-class="{'move-left': moveLeft, 'move-right': moveRight}" ui-view>
+<!-- <div class="view-animate  view  page-{{$state.current.name}} " ng-class="{'move-left': moveLeft, 'move-right': moveRight, 'current-page' : pageName == $state.current.name}" ui-view> -->
+    <div class="view-animate  view  page-{{$state.current.name}} current-{{$state.current.name}}   " ng-class="{'move-left': moveLeft, 'move-right': moveRight, 'current-page' : pageName == $state.current.name}" ui-view>
 
             </div>
         </div>
@@ -77,7 +80,7 @@
     <!-- Angular components -->
     <!-- build:appcomponents assests/js/appcomponents.min.js -->
     <script type="text/javascript" src="./app/app.js"></script>
-    <script type="text/javascript" src="./app/interceptor.js"></script>    
+    <script type="text/javascript" src="./app/interceptor.js"></script>
     <script type="text/javascript" src="./app/config.js"></script>
     <script type="text/javascript" src="./app/route.js"></script>
     <script type="text/javascript" src="./app/run.js"></script>

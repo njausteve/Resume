@@ -8,12 +8,12 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = {
-    validatePost: function(req, res, next) {
+    validatePost: function (req, res, next) {
 
         validator({
 
             customValidators: {
-                categoryValidator: function(input) {
+                categoryValidator: function (input) {
 
                     console.log(input);
 
@@ -31,17 +31,15 @@ module.exports = {
         next();
 
     },
-    fetchLatestTweet: function(req, res, next) {
-
-        console.log("A request for things received");
+    fetchLatestTweet: function (req, res, next) {
 
         // get latest tweet
         getLatestTweet.get('statuses/user_timeline', {
             user_id: 355697964,
             count: 2,
             tweet_mode: 'extended'
-        }, function(err, data, response) {
-            console.log("tweet data:", data[0]);
+        }, function (err, data, response) {
+
             if (err) {
                 console.log(err);
 
@@ -63,7 +61,7 @@ module.exports = {
                     Person.find({}, {
                         'latest_tweet': 1,
                         '_id': 0
-                    }, function(err, profile) {
+                    }, function (err, profile) {
 
                         var latestTweetIdFromDb = profile[0].latest_tweet.tweet_id,
                             latestTweetFromDb = profile[0].latest_tweet;
@@ -78,15 +76,15 @@ module.exports = {
 
                             if (latestTweet.tweet_id !== latestTweetIdFromDb) {
 
-                                console.log("update db");
+                                console.log("update db : with latest tweet");
 
                                 Person.update({}, {
-                                        $set: {
-                                            "latest_tweet": latestTweet
-                                        }
-                                    },
+                                    $set: {
+                                        "latest_tweet": latestTweet
+                                    }
+                                },
 
-                                    function(err, newprofile) {
+                                    function (err, newprofile) {
 
                                         if (err)
                                             console.log(err);

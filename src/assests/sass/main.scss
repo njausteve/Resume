@@ -17,6 +17,10 @@
     display: none !important;
 }
 
+html, body{
+    height:100%;
+  }
+
 body,
 h1,
 h2,
@@ -25,10 +29,15 @@ h4,
 h5,
 p {
     font-family: 'Lato', sans-serif;
-}
+}    
+
+
 
 .no-padding {
     padding: 0;
+}
+.text-left{
+    text-align:left;
 }
 
 .center {
@@ -165,37 +174,43 @@ p {
             .current-nav {
                 left      : 0;
                 visibility: visible;
-                transition: all ease-in 1s;
+                
+                 a{
+                    animation-name: pulse;
+                    color: white;
+                 }
             }
 
             .right-nav {
                 left      : 100%;
                 visibility: visible;
-                transition: all ease-in 1s;
+             //   transition: all ease-in 1s;
             }
 
             .left-nav {
-                transition: all ease-in 1s;
+            //    transition: all ease-in 1s;
                 visibility: visible;
                 left      : -100%;
             }
 
             .right-nav-outer {
                 left      : 140%;
-                transition: all linear 1s;
+              //  transition: all linear 1s;
                 visibility: hidden;
             }
 
             .left-nav-outer {
                 visibility: hidden;
                 left      : -240%;
-                transition: all linear 3s;
+             //   transition: all linear 3s;
             }
         }
     }
 }
 
 #about-me {
+
+    padding: 30px 10% 50px 10%;
     .intro {
         h2 {
             font-family   : 'Lato';
@@ -724,6 +739,17 @@ p {
 }
 
 #resume {
+
+    padding: 0 15% 50px 15%;
+
+
+    @media screen and (max-width: 767px) {
+    padding: 0px;
+        
+    }
+
+
+    
     .content {
         padding-top: 2em;
         position   : relative;
@@ -737,12 +763,30 @@ p {
             padding: 1em 2em;
         }
 
+
+        .btn-resume{
+            cursor: pointer;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            text-decoration: none;
+
+            &:hover {
+                transform: translateY(-7px);
+                box-shadow: 0px 15px 20px rgba(33,150,243, 0.23);
+                background  : #0085CC;
+                color       : #fff;
+                border-color: #0085cc;
+            }
+        }
+
         .section-title {
             span {
                 font-size     : 12px;
                 line-height   : 19.92px;
                 letter-spacing: 1px;
             }
+
+           
         }
 
         .timeline {
@@ -883,6 +927,7 @@ p {
                     letter-spacing: 0.28px;
                     line-height   : 23.24px;
                     color         : #334455;
+                    
 
                     &:before {
                         display   : block;
@@ -1149,6 +1194,13 @@ p {
                 margin-left: 130px;
                 @media screen and (max-width: 767px) {
                     margin-left: 0;
+
+                    p{
+                        text-align: center !important;
+                    }
+
+                  
+
                 }
 
                 p {
@@ -1239,6 +1291,7 @@ p {
                 button,
                 input[type=button],
                 input[type=submit] {
+
                     display       : inline-block;
                     position      : relative;
                     padding       : 1.3em 2.6em;
@@ -1250,16 +1303,22 @@ p {
                     border        : 0;
                     outline       : 0;
                     background    : #fff;
-                    border        : 2px solid #6A7686;
+                    border        : 1px solid #6A7686;
                     color         : #6A7686;
                     text-shadow   : none;
                     border-radius : 4px;
+                    cursor: pointer;
+                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease 0s;
+                text-decoration: none;
 
-                    &:hover {
-                        background  : #0085CC;
-                        color       : #fff;
-                        border-color: #0085cc;
-                    }
+                &:hover {
+                    transform: translateY(-7px);
+                    box-shadow: 0px 15px 20px rgba(33,150,243, 0.23);
+                    background  : #0085CC;
+                    color       : #fff;
+                    border-color: #0085cc;
+                }
                 }
 
                 textarea {
@@ -1455,6 +1514,8 @@ p {
 //blog page
 
 #blog {
+
+    padding: 0 10%;
     position: relative;
     z-index : 100;
 
@@ -1464,9 +1525,9 @@ p {
         margin    : auto;
         width     : 80%;
         text-align: left;
-        @media screen and (max-width: 767px) {
-            padding: 1em;
-        }
+            @media screen and (max-width: 767px) {
+                padding: 1em;
+            }
 
         .section-title {
             position     : relative;
@@ -1483,6 +1544,7 @@ p {
             }
 
             span {
+
                 position      : relative;
                 display       : inline-block;
                 padding-right : 1.4em;
@@ -1520,6 +1582,8 @@ p {
                     }
                 }
             }
+        
+            
         }
 
         .latest-posts {
@@ -1663,10 +1727,22 @@ p {
                 border        : 0;
                 outline       : 0;
                 background    : #fff;
-                border        : 2px solid #6A7686;
+                border        : 1px solid #6A7686;
                 color         : #6A7686;
                 text-shadow   : none;
                 border-radius : 4px;
+                cursor: pointer;
+                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease 0s;
+                text-decoration: none;
+
+                &:hover {
+                    transform: translateY(-7px);
+                    box-shadow: 0px 15px 20px rgba(33,150,243, 0.23);
+                    background  : #0085CC;
+                    color       : #fff;
+                    border-color: #0085cc;
+                }
             }
         }
 
@@ -1675,6 +1751,186 @@ p {
         }
     }
 }
+
+/*===================== error page =====================*/
+#error-page{
+
+
+            
+      
+    .camel{
+   
+        
+        position: relative;
+        z-index: 2000;
+        
+                 
+        .camel-image {
+
+            
+            
+            margin-top: 30px;
+            margin-bottom: -100px;
+    
+                 
+            img{
+                border-radius: 10px;
+                border: 2px solid #3fa9f5;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        
+            }
+    
+        }
+
+        @media screen and (min-width: 992px) {
+
+            height:100vh;
+
+            .camel-image{
+                position: absolute; 
+                top: 15%;
+                right: -100px;
+
+            }
+            
+                            
+            
+        }
+       
+    }
+   
+
+.details{
+    background-color: #2196f3;
+    position: relative;
+    opacity: 0.75;
+    z-index: 1000;
+    // height:100vh;
+     padding-top: 80px;
+     padding-bottom: 80px;
+
+    .error-details{
+
+
+        padding:0  20px;
+
+
+
+        h1{        
+            color: #ffc107;
+            font-size: 6em;
+            font-weight: bold;
+            text-shadow:
+            -1px -1px 0 #ffffff,  
+            1px -1px 0 #ffffff,
+            -1px 1px 0 #ffffff,
+            1px 1px 0 #ffffff;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 0px;
+            
+           
+            
+        }
+    
+        .error-text{
+
+       
+       
+         h2{
+             color:white;
+             text-align: center;
+             margin-top: 10px;
+             margin-bottom: 10px;
+
+
+         }
+        h4{
+            color: white;
+            font-size: 1.5em;          
+             font-family: 'Lato';
+             font-weight: 300;
+             line-height: 1.4;
+            letter-spacing: normal;
+            text-align: center;
+            
+        }
+        hr{
+            border-top: 1px solid #ffc107;
+            margin-top: 10px;
+
+          }
+
+        .btn-home{
+            margin :20px auto;
+            font-size: 1em;
+            font-family: 'Lato';
+            background-color: #5d6f70;
+            letter-spacing: 2px;
+            color: #ffffff;
+            padding-left: 40px;
+            padding-right: 40px;
+            cursor: pointer !important;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+
+
+            &:hover{
+                background-color: #ffc107;
+                transform: translateY(-4px);
+                box-shadow: 0px 15px 20px rgba(255, 193, 7, 0.4);
+
+
+            }
+        }
+    }
+    }
+    @media screen and (min-width: 992px) {
+
+        position : relative;
+        height : 100vh;
+        padding: 80px 100px 80px 50px;
+
+        .error-details{
+
+             margin-left: 100px;
+             position: absolute; 
+             top: 15%;
+
+
+             h1{
+                font-size: 15em;
+                text-align: left;
+            }
+
+                .error-text{
+
+    
+                    h1,h2,h4{
+                        text-align:left;
+                    }
+
+                    
+                    h4{
+                        line-height: 45px;
+
+                    }
+                    .btn-home{
+                        margin: 30px auto;
+                    }
+                }
+
+             } 
+        
+        
+          }  
+
+    }
+   
+
+}
+
+
 @keyframes rotateOutWord {
     0% {
         opacity  : 1;
@@ -1697,54 +1953,89 @@ p {
         transform: translateY(0px);
     }
 }
-@keyframes fadeInLeft {
+@keyframes fadeIn {
     from {
-        opacity          : 0;
-        -webkit-transform: translate3d(-90%, 0, 0);
-        transform        : translate3d(-90%, 0, 0);
+      opacity: 0;
     }
-
+  
     to {
-        opacity          : 1;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform        : translate3d(0, 0, 0);
+      opacity: 1;
     }
-}
-@keyframes fadeOutLeft {
+  }
+  @keyframes fadeOut {
     from {
-        opacity: 1;
+      opacity: 1;
     }
-
+  
     to {
-        opacity          : 0;
-        -webkit-transform: translate3d(-90%, 0, 0);
-        transform        : translate3d(-90%, 0, 0);
+      opacity: 0;
     }
-}
-@keyframes fadeInRight {
+  }
+
+  @keyframes pulse {
     from {
-        opacity          : 0;
-        -webkit-transform: translate3d(90%, 0, 0);
-        transform        : translate3d(90%, 0, 0);
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
     }
-
+  
+    50% {
+      -webkit-transform: scale3d(1.05, 1, 1.05);
+      transform: scale3d(1.05, 1, 1.05);
+    }
+  
     to {
-        opacity          : 1;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform        : translate3d(0, 0, 0);
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
     }
-}
-@keyframes fadeOutRight {
+  }
+    
+  @keyframes zoomIn {
     from {
-        opacity: 1;
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
     }
+  
+    50% {
+      opacity: 1;
+    }
+  }
 
+
+
+  @keyframes bounce {
+    from,
+    20%,
+    53%,
+    80%,
     to {
-        opacity          : 0;
-        -webkit-transform: translate3d(90%, 0, 0);
-        transform        : translate3d(90%, 0, 0);
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
     }
-}
+  
+    40%,
+    43% {
+      -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      -webkit-transform: translate3d(0, -30px, 0);
+      transform: translate3d(0, -30px, 0);
+    }
+  
+    70% {
+      -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      -webkit-transform: translate3d(0, -15px, 0);
+      transform: translate3d(0, -15px, 0);
+    }
+  
+    90% {
+      -webkit-transform: translate3d(0, -4px, 0);
+      transform: translate3d(0, -4px, 0);
+    }
+  }
+  
 // notifications ngNotify custom to override default styles for ngNotify
 
 .ngn-success {
@@ -1758,69 +2049,11 @@ p {
 .send-button {
     color: #0078CA;
 }
+
+
+
 /*=======================  page styling          =======================*/
-// .page-blog {
-//     background-color: green;
-// }
-//
-// .page-about {
-//     background-color: yellow !important;
-// }
-//
-// .page-contact {
-//     background-color: purple;
-// }
-//
-// .page-portifolio {
-//     background-color: cyan;
-// }
-//
-// .page-resume {
-//     background-color: orange;
-// }
 
-.move-right {
-    animation: fadeInRight 1s both ease-in;
-}
-
-.move-left {
-    animation: fadeInLeft 1s both ease-in;
-}
-/* =============== page-navigatio right ------------------------ */
-.page-about,
-.page-blog,
-.page-contact,
-.page-portifolio,
-.page-resume {
-    &.view-animate {
-        &.move-right {
-            &.ng-leave {
-                animation: fadeOutLeft 1s both ease-out;
-            }
-
-            &.ng-enter {
-                animation: fadeInRight 1s both ease-in;
-            }
-        }
-    }
-}
-/* =============== page-navigatio left ------------------------ */
-.page-about,
-.page-blog,
-.page-contact,
-.page-portifolio,
-.page-resume {
-    &.view-animate,
-    .move-left {
-        &.ng-leave {
-            animation: fadeOutRight 1s both ease-in;
-        }
-
-        &.ng-enter {
-            animation: fadeInLeft 1s both ease-in;
-        }
-    }
-}
 
 .view-container {
     position: relative;
@@ -1831,4 +2064,21 @@ p {
     text-align: center;
     top       : 0;
     width     : 100%;
+
+
+  transform: translate3d(0, 0, 0);
+
+  
+  &.ng-enter {
+    animation: fadeIn 2s ;
+  }
+  &.ng-enter-active{
+      animation: pulse 1s;
+  }
+ 
+  &.ng-leave {
+    animation: fadeOut 1s ease-out ;
+    
+  }
+ 
 }

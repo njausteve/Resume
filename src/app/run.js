@@ -11,7 +11,9 @@
         .run(runBlock);
 
     /** @ngInject */
-    function runBlock($log, $rootScope, $state, $location, ngNotify) {
+    function runBlock($log, $rootScope, $state, $location, ngNotify, $animate) {
+
+        $animate.enabled(true);
 
 
         $log.info("Njausteve , 2017 \n Online Resume \n lets do this! ");

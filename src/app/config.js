@@ -31,6 +31,7 @@
           files: ['app/components/portfolio/portfolio.controller.js', 'app/components/portfolio/portfolio.service.js']
         },
 
+
         //portifolio module
         {
           name: 'PortifolioDetailsModule',
@@ -54,6 +55,12 @@
             type: 'js',
             path: 'http://maps.google.com/maps/api/js?key=AIzaSyAGcb_rYSDpKnLE7-rIe8t-d15x7Tl1mdQ'
           }, 'app/externalModules/ng-map.min.js']
+        },
+        //error module
+        {
+          name: 'ErrorModule',
+          files: ['app/components/error/error.controller.js']
+
         }
       ]
     });

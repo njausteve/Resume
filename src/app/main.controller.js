@@ -11,7 +11,7 @@
     .controller('mainController', mainController);
 
   /** @ngInject */
-  function mainController($rootScope, $state) {
+  function mainController($rootScope, $state, $timeout) {
 
     var vm = this;
 
@@ -24,7 +24,6 @@
     vm.navleft = 1;
     vm.navRightOuter = vm.navRight + 1;
     vm.navleftOuter = vm.navleft - 1;
-    vm.test = "minion";
     $rootScope.moveLeft, $rootScope.moveRight = 0;
 
 
@@ -34,7 +33,7 @@
 
       return state.name;
 
-    }).filter(Boolean).slice(1);
+    }).filter(Boolean).slice(2);
 
     console.log('PageNames length: ', vm.pageNames.length);
 
@@ -49,31 +48,6 @@
       var previousStateIndex = vm.pageNames.indexOf($state.current.name);
       console.log(" the previousStateIndex : " + previousStateIndex + "  => \n the next state is : " + nextStateIndex);
 
-      if (nextStateIndex == 0 && previousStateIndex == vm.pageNames.length - 1) {
-
-        $rootScope.moveRight = 1
-        $rootScope.moveLeft = 0;
-        console.log("RIGHT");
-
-      } else if (previousStateIndex == 0 && nextStateIndex == vm.pageNames.length - 1) {
-
-        $rootScope.moveRight = 0;
-        $rootScope.moveLeft = 1;
-        console.log('LEFT');
-
-      } else if (nextStateIndex > previousStateIndex) {
-
-        $rootScope.moveRight = 1
-        $rootScope.moveLeft = 0;
-        console.log("RIGHT");
-
-      } else {
-
-        $rootScope.moveRight = 0;
-        $rootScope.moveLeft = 1;
-        console.log('LEFT');
-
-      }
 
       // TODO: refactor this logic
 
@@ -106,15 +80,18 @@
           break;
       }
 
-
-      console.log('current:', nextStateIndex);
-      console.log('NR: ', vm.navRight);
-      console.log('ONR', vm.navRightOuter);
-      console.log('NL: ', vm.navleft);
-      console.log('ONL', vm.navleftOuter);
-
       $state.go(vm.pageNames[nextStateIndex]);
 
+//clear move left/right classes after
+
+      $timeout(function(){
+        $rootScope.moveLeft=0;
+         $rootScope.moveRight=0;
+
+      $rootScope.$apply();
+        
+
+      },2000);
 
 
     };
