@@ -63,7 +63,7 @@ p {
     border-bottom: 4px solid #f4f6f7; }
 
 .head {
-  background: url("./../images/abstract-mosaic-background-1.png");
+  background: url("./../images/home-35d070be.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -279,7 +279,7 @@ p {
   margin-bottom: 32px; }
 
 #my-works {
-  padding: 1em; }
+  padding: 30px 15% 50px 15%; }
   @media screen and (min-width: 767px) {
     #my-works .content {
       padding-left: 0;
@@ -328,7 +328,7 @@ p {
         width: 100%;
         height: auto; }
         #my-works .content .single-work .work .mask img:hover {
-          opacity: 0.5; }
+          background-color: rgba(51, 51, 51, 0.49); }
       #my-works .content .single-work .work .mask:before {
         position: absolute;
         left: 50%;
@@ -352,7 +352,7 @@ p {
       #my-works .content .single-work .work .mask:hover:before {
         visibility: visible; }
       #my-works .content .single-work .work .mask:hover img {
-        opacity: 0.5; }
+        background-color: rgba(51, 51, 51, 0.49); }
     #my-works .content .single-work .work .work-desc .title {
       font-family: 'Lato', sans-serif;
       text-transform: uppercase;
@@ -455,10 +455,11 @@ p {
       .portfolio .portfolio-nav {
         text-align: center; } }
   .portfolio .portfolio-field {
+    padding: 0 0 1em;
     padding-bottom: 2em; }
-    @media screen and (max-width: 991px) {
-      .portfolio .portfolio-field {
-        padding: 0 0 1em; } }
+    @media screen and (min-width: 991px) {
+      .portfolio .portfolio-field h3, .portfolio .portfolio-field p, .portfolio .portfolio-field ul, .portfolio .portfolio-field li, .portfolio .portfolio-field a {
+        text-align: left; } }
     .portfolio .portfolio-field img {
       margin-bottom: 50px;
       max-width: 100%;
@@ -1130,7 +1131,9 @@ p {
 #blog {
   padding: 0 10%;
   position: relative;
-  z-index: 100; }
+  z-index: 100;
+  -webkit-transition: all linea 2s;
+  transition: all linea 2s; }
   #blog .content {
     position: relative;
     padding: 1em 3em;
@@ -1188,7 +1191,8 @@ p {
       margin-top: 2em;
       min-height: 200px;
       width: 102.8%;
-      margin-left: -1.4%; }
+      margin-left: -1.4%;
+      cursor: pointer; }
       #blog .content .latest-posts .media-cell {
         float: left;
         padding: 10px 20px;
@@ -1197,8 +1201,12 @@ p {
                 box-sizing: border-box; }
         #blog .content .latest-posts .media-cell .media-box {
           position: relative;
-          margin-bottom: 30px;
           background-color: #fff; }
+          #blog .content .latest-posts .media-cell .media-box:hover {
+            -webkit-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+                    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            -webkit-transform: translateY(-7px);
+                    transform: translateY(-7px); }
           #blog .content .latest-posts .media-cell .media-box .post_image {
             display: block;
             width: 100%;
@@ -1252,6 +1260,11 @@ p {
           background: #fff;
           border-color: #EAEDEF;
           border-radius: 0 0 4px 4px; }
+          #blog .content .latest-posts .media-cell .media-cell-desc:hover {
+            -webkit-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+                    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            -webkit-transform: translateY(-7px);
+                    transform: translateY(-7px); }
           #blog .content .latest-posts .media-cell .media-cell-desc .date {
             float: left;
             margin-right: 16px;
@@ -1278,8 +1291,10 @@ p {
             margin: 0;
             font-weight: 700;
             font-size: 14px;
-            letter-spacing: 0.03em; }
+            letter-spacing: 0.03em;
+            cursor: pointer; }
           #blog .content .latest-posts .media-cell .media-cell-desc a {
+            text-decoration: none;
             color: #444;
             border-bottom: 2px solid #FFF;
             -webkit-transition: color 0.1s, background-color 0.2s, border-color 0.2s;
@@ -1574,6 +1589,22 @@ p {
 
 .send-button {
   color: #0078CA; }
+
+.btn-resume {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  text-decoration: none; }
+  .btn-resume:hover {
+    -webkit-transform: translateY(-7px);
+            transform: translateY(-7px);
+    -webkit-box-shadow: 0px 15px 20px rgba(33, 150, 243, 0.23);
+            box-shadow: 0px 15px 20px rgba(33, 150, 243, 0.23);
+    background: #0085CC;
+    color: #fff;
+    border-color: #0085cc; }
 
 /*=======================  page styling          =======================*/
 .view-container {

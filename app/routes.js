@@ -40,6 +40,8 @@ module.exports = function(app) {
 
       res.json(articles);
 
+      console.log(articles);
+
     });
   });
 
@@ -169,11 +171,11 @@ module.exports = function(app) {
   app.get('*', function(req, res, next) {
 
     // path to change for prod
-     res.sendfile(path.resolve('_build/index.html'));
+    res.sendfile(path.resolve('_build/index.html'));
 
 //path for dev
 
-    // res.sendfile(path.resolve('src/index.html'));
+  // res.sendfile(path.resolve('src/index.html'));
     
   });
 

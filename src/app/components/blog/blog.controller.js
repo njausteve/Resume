@@ -37,26 +37,52 @@
 
         function getArticles(){
 
+            
+
             return blogService.getBlogArticles()
 
             .then( function(response){
-                  
-                  vm.posts = response;
-
-              var content = response[0].content;
-
-              console.log(response); 
-               
-              console.log( angular.element(content).text());
-               
-            //   getImageUrl(content);
-                  
-            //   function getImageUrl(content) {
-             
-            //     var res = content.match(/src="(https?\:\/\/[^"]+)"/g);
                 
-            //     console.log("Banner image url : ", res );
-            // }
+               vm.posts =  response.map(function(respond, index, array){
+
+                  respond.imgUrl = [];  
+
+                       var m, 
+              regx= /<img.*?src="([^">]*\/([^">]*?))".*?>/g;
+
+              while ( m = regx.exec(respond.content) ) {
+                
+                         respond.imgUrl.push( m[1] );
+
+                  
+              }
+
+                   return respond;
+
+               })
+
+
+               console.log(vm.posts);
+
+                
+
+
+            //       vm.posts = response;
+            //       vm.posts[0].imgUrls = [];
+
+            //   var content = response[0].content;
+              
+               
+            //   console.log( angular.element(content).text());
+
+               
+            //   var m, 
+            //   regx= /<img.*?src="([^">]*\/([^">]*?))".*?>/g;
+
+            //   while ( m = regx.exec(content) ) {
+            //     vm.posts[0].imgUrls.push( m[1] );
+            //   }
+            //   console.log(vm.posts); 
 
             })
             .catch( function(error){
@@ -66,6 +92,8 @@
                     console.log(error);
             });
         }
+
+        
 
 
         getArticles();
